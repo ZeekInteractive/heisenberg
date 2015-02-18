@@ -2,3 +2,4 @@
 assets/components
 node_modules
 npm-debug.log
+.DS_Store

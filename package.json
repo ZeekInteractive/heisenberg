@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-ruby-sass": "^1.0.0-alpha.3"
+  },
+  "name": "heisenberg",
+  "description": "Heisenberg - Zeek Starter Theme ===",
+  "version": "0.0.1",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-ruby-sass": "^1.0.0-alpha.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZeekInteractive/heisenberg"
+  },
+  "author": "Zeek Interactive",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeekInteractive/heisenberg/issues"
+  },
+  "homepage": "https://github.com/ZeekInteractive/heisenberg"
+}

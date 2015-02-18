@@ -1,0 +1,24 @@
+{
+  "name": "heisenberg",
+  "version": "0.0.1",
+  "authors": [
+    "Jacob Arriola <jacob@zeek.com>"
+  ],
+  "description": "Wordpress starter theme",
+  "keywords": [
+    "wordpress",
+    "gulp",
+    "Foundation",
+    "sass"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/components",
+    "test",
+    "tests"
+  ]
+}

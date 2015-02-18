@@ -12,6 +12,7 @@ We use bower as our front end package manager.  To get started, run <code>bower 
 
 <h3>Sass architecture</h3>
 sass/ 
+<code>
 | 
 |– base/ 
 |   |– _buttons.scss     # Buttons
@@ -37,7 +38,7 @@ sass/
 | 
 `– _settings.scss 		 # Foundation settings file
 `– app.scss              # primary Sass file 
-
+</code>
 <h3>Wordpress files</h3>
 Our starter theme follows the Codex Template Heirchacy as found on http://codex.wordpress.org/Template_Hierarchy.
 

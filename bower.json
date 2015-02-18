@@ -22,5 +22,9 @@
     "assets/components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "foundation": "~5.5.1",
+    "normalize.css": "~3.0.2"
+  }
 }

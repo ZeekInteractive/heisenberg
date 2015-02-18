@@ -100,7 +100,18 @@ add_action( 'widgets_init', 'heisenberg_widgets_init' );
  * Enqueue scripts and styles.
  */
 function heisenberg_scripts() {
-	wp_enqueue_style( 'heisenberg-style', get_stylesheet_uri() );
+	// wp_enqueue_style( 'heisenberg-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/css/app.css', '', '7' );
+
+	// Add modernizer.js for shimming HTML5 elements that older browsers may not detect and for mobile detection
+	wp_enqueue_script ( 'modernizr', get_template_directory_uri() . '/assets/components/modernizr/modernizr.js', '', '', false );
+
+	// Add fastclick.js file to footer (for help with devices with touch UIs)
+	wp_enqueue_script ( 'fastclick_js', get_template_directory_uri() . '/assets/components/fastclick/lib/fastclick.js', '', '', true );
+
+	// Add core Foundation js to footer
+	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/components/foundation/js/foundation.min.js', array( 'jquery' ), '5', true );
 
 	wp_enqueue_script( 'heisenberg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

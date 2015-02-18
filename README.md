@@ -11,8 +11,8 @@ The theme dependencies are listed in our <code>package.json</code> file.  If you
 We use bower as our front end package manager.  To get started, run <code>bower install</code> and all of the packages will be brought into the .assets/components directory.
 
 <h3>Sass architecture</h3>
-sass/ 
 <code>
+sass/ 
 | 
 |– base/ 
 |   |– _buttons.scss     # Buttons
@@ -42,5 +42,5 @@ sass/
 <h3>Wordpress files</h3>
 Our starter theme follows the Codex Template Heirchacy as found on http://codex.wordpress.org/Template_Hierarchy.
 
-Site Front Page 		-	<code>front-page.php</code>
+Site Front Page 		-	<code>front-page.php</code><br>
 Blog Posts Index Page 	-	<code>home.php</code>

@@ -1,5 +1,10 @@
 @import "settings";
+@import "../components/foundation/scss/normalize";
 @import "../components/foundation/scss/foundation";
 
+
+@import "sections/sections";
+
+@import "pages/pages";
 
 @import "shame"; // Quick fix sass file to be used temporarily and moved onto its proper location when time permits

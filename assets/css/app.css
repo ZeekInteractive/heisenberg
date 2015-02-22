@@ -9600,7 +9600,48 @@ p {
   margin: 0;
 }
 
+/* line 8, assets/sass/base/_typography.scss */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* line 13, assets/sass/base/_typography.scss */
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
 /* line 1, assets/sass/pages/_page.scss */
+#content {
+  margin: 2rem 0;
+}
+
+/* line 5, assets/sass/pages/_page.scss */
+.entry-meta {
+  margin-bottom: 1.25rem;
+}
+
+/* line 9, assets/sass/pages/_page.scss */
+.updated {
+  display: none;
+}
+
+/* line 13, assets/sass/pages/_page.scss */
+.vcard {
+  display: inherit;
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+
+/* line 20, assets/sass/pages/_page.scss */
+.vcard .fn {
+  font-weight: normal;
+  font-size: 1 rem;
+}
+
+/* line 25, assets/sass/pages/_page.scss */
 .entry-content p {
   margin-bottom: 1.25rem;
 }
@@ -9608,6 +9649,17 @@ p {
 /* line 1, assets/sass/sections/_header.scss */
 #masthead {
   background: #ccc;
+}
+
+/* line 5, assets/sass/sections/_header.scss */
+.site-title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* line 10, assets/sass/sections/_header.scss */
+.site-description {
+  margin: 0;
 }
 
 /* line 1, assets/sass/sections/_footer.scss */
@@ -9618,6 +9670,12 @@ p {
 /* line 1, assets/sass/sections/_comments.scss */
 .comment-content p {
   margin-bottom: 1.25rem;
+}
+
+/* line 1, assets/sass/sections/_sidebar.scss */
+#secondary h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 /* line 1, assets/sass/_shame.scss */

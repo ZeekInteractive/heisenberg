@@ -30,13 +30,13 @@
 
 					<div class="row"><!-- .row start -->
 
-						<div class="large-6 small-12 columns"><!-- .columns start -->
+						<div class="small-12 columns"><!-- .columns start -->
 
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
 						</div><!-- .columns end -->
 
-						<div class="large-6 small-12 columns"><!-- .columns start -->
+						<div class="small-12 columns"><!-- .columns start -->
 
 							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 

@@ -9638,7 +9638,7 @@ h2 {
 /* line 20, assets/sass/pages/_page.scss */
 .vcard .fn {
   font-weight: normal;
-  font-size: 1 rem;
+  font-size: 1rem;
 }
 
 /* line 25, assets/sass/pages/_page.scss */
@@ -9665,6 +9665,7 @@ h2 {
 /* line 1, assets/sass/sections/_footer.scss */
 #colophon {
   background: #ccc;
+  padding: 1rem 0;
 }
 
 /* line 1, assets/sass/sections/_comments.scss */

@@ -9619,3 +9619,8 @@ p {
 .comment-content p {
   margin-bottom: 1.25rem;
 }
+
+/* line 1, assets/sass/_shame.scss */
+body {
+  position: inherit;
+}

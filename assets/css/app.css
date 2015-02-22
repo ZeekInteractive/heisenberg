@@ -9595,3 +9595,27 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
+/* line 4, assets/sass/base/_typography.scss */
+p {
+  margin: 0;
+}
+
+/* line 1, assets/sass/pages/_page.scss */
+.entry-content p {
+  margin-bottom: 1.25rem;
+}
+
+/* line 1, assets/sass/sections/_header.scss */
+#masthead {
+  background: #ccc;
+}
+
+/* line 1, assets/sass/sections/_footer.scss */
+#colophon {
+  background: #ccc;
+}
+
+/* line 1, assets/sass/sections/_comments.scss */
+.comment-content p {
+  margin-bottom: 1.25rem;
+}

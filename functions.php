@@ -147,3 +147,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+add_filter( 'wp_nav_menu', 'heisenberg_nav_menu', 10, 2 );
+
+function heisenberg_nav_menu( $menu ){
+	$menu = str_replace('current-menu-item', 'current-menu-item active', $menu);
+	return $menu;
+}

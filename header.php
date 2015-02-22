@@ -48,16 +48,26 @@
 
 			</div><!-- .columns end -->
 
+		</div><!-- .row end -->
+
+	</header><!-- #masthead -->
+
+	<div class="main-navigation">
+
+		<div class="row"><!-- .row start -->
+
 			<div class="small-12 columns"><!-- .columns start -->
 
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<nav id="site-navigation" class="top-bar hide-for-small" data-topbar role="navigation">
+					<section class="top-bar-section">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					</section>
 				</nav><!-- #site-navigation -->
 
 			</div><!-- .columns end -->
 
 		</div><!-- .row end -->
 
-	</header><!-- #masthead -->
+	</div><!-- .main-navigation -->
 
 	<div id="content" class="site-content">

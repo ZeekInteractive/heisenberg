@@ -96,13 +96,44 @@ function heisenberg_widgets_init() {
 }
 add_action( 'widgets_init', 'heisenberg_widgets_init' );
 
+
 /**
- * Enqueue scripts and styles.
+ * Enqueue styles.
+ */
+
+if ( !function_exists( 'heisenberg_styles' ) ) :
+
+	function heisenberg_styles() {
+
+		// Conditional css for debug or production mode
+
+		if ( WP_DEBUG ) :
+
+			// Enqueue our debug stylesheet [development mode - non-minified]
+			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/css/app.css', '', '9' );
+
+		else :
+
+			// Enqueue our minified stylesheet [production mode - minified stylesheet]
+			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/css/app.min.css', '', '9' );
+
+		endif;
+
+
+	}
+
+
+add_action( 'wp_enqueue_scripts', 'heisenberg_styles' );
+
+endif;
+
+
+
+
+/**
+ * Enqueue scripts.
  */
 function heisenberg_scripts() {
-	// wp_enqueue_style( 'heisenberg-style', get_stylesheet_uri() );
-
-	wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/css/app.css', '', '7' );
 
 	// Add modernizer.js for shimming HTML5 elements that older browsers may not detect and for mobile detection
 	wp_enqueue_script ( 'modernizr', get_template_directory_uri() . '/assets/components/modernizr/modernizr.js', '', '', false );

@@ -1,5 +1,6 @@
 var	gulp	=	require('gulp'),
-	sass	=	require('gulp-ruby-sass');
+	sass	=	require('gulp-ruby-sass'),
+	notify	=	require('gulp-notify');
 
 
 // Our 'styles' tasks, which handles our sass actions such as compliling and minification
@@ -9,7 +10,13 @@ gulp.task('styles', function() {
 			style: 'expanded',
 			lineNumbers: true 
 		})
-		.pipe(gulp.dest('assets/css'));
+		.on('error', notify.onError(function(error) {
+			return "Error: " + error.message;
+		}))
+		.pipe(gulp.dest('assets/css'))
+		.pipe(notify({
+			message: "Styles task complete!"
+		}));
 });
 
 

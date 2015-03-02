@@ -210,7 +210,6 @@ figure {
  */
 /* line 211, assets/components/foundation/scss/normalize.scss */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -363,8 +362,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
 }
@@ -509,8 +506,6 @@ html, body {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -4562,8 +4557,6 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   padding: 0.5rem;
   height: 2.3125rem;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   transition: all 0.15s linear;
 }
@@ -5465,28 +5458,14 @@ kbd {
     -webkit-transform: rotate(360deg);
   }
 }
-@-moz-keyframes rotate {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-o-keyframes rotate {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
 @keyframes rotate {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /* Orbit Graceful Loading */
@@ -5537,10 +5516,14 @@ kbd {
   border: solid 3px;
   border-color: #555555 #FFFFFF;
   border-radius: 1000px;
-  animation-name: rotate;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 /* line 120, assets/components/foundation/scss/foundation/components/_orbit.scss */
@@ -6582,7 +6565,8 @@ ul.pagination li {
   outline: 0;
   -webkit-user-select: none;
   -moz-user-select: none;
-  user-select: none;
+  -ms-user-select: none;
+      user-select: none;
 }
 /* line 56, assets/components/foundation/scss/foundation/components/_switches.scss */
 .switch label {
@@ -6620,13 +6604,8 @@ ul.pagination li {
   left: .25rem;
   width: 1.5rem;
   height: 1.5rem;
-  -webkit-transition: left 0.15s ease-out;
-  -moz-transition: left 0.15s ease-out;
-  -o-transition: translate3d(0, 0, 0);
   transition: left 0.15s ease-out;
   -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 /* line 107, assets/components/foundation/scss/foundation/components/_switches.scss */
@@ -8402,10 +8381,7 @@ blockquote p {
 .inner-wrap {
   position: relative;
   width: 100%;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -ms-transition: -ms-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
 }
 /* line 172, assets/components/foundation/scss/foundation/components/_global.scss */
@@ -8502,7 +8478,8 @@ blockquote p {
   padding: 0;
   color: #FFFFFF;
   position: relative;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 /* line 129, assets/components/foundation/scss/foundation/components/_global.scss */
 .tab-bar .menu-icon span::after {
@@ -8533,14 +8510,13 @@ blockquote p {
   background: #333333;
   z-index: 1001;
   box-sizing: content-box;
+  transition: -webkit-transform 500ms ease 0s;
   transition: transform 500ms ease 0s;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -ms-transform: translate(-100%, 0);
   -webkit-transform: translate3d(-100%, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
   left: 0;
 }
@@ -8561,14 +8537,13 @@ blockquote p {
   background: #333333;
   z-index: 1001;
   box-sizing: content-box;
+  transition: -webkit-transform 500ms ease 0s;
   transition: transform 500ms ease 0s;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -ms-transform: translate(100%, 0);
   -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
   right: 0;
 }
@@ -8613,9 +8588,7 @@ ul.off-canvas-list li a:hover {
 .move-right > .inner-wrap {
   -ms-transform: translate(15.625rem, 0);
   -webkit-transform: translate3d(15.625rem, 0, 0);
-  -moz-transform: translate3d(15.625rem, 0, 0);
   -ms-transform: translate3d(15.625rem, 0, 0);
-  -o-transform: translate3d(15.625rem, 0, 0);
   transform: translate3d(15.625rem, 0, 0);
 }
 /* line 338, assets/components/foundation/scss/foundation/components/_offcanvas.scss */
@@ -8645,9 +8618,7 @@ ul.off-canvas-list li a:hover {
 .move-left > .inner-wrap {
   -ms-transform: translate(-15.625rem, 0);
   -webkit-transform: translate3d(-15.625rem, 0, 0);
-  -moz-transform: translate3d(-15.625rem, 0, 0);
   -ms-transform: translate3d(-15.625rem, 0, 0);
-  -o-transform: translate3d(-15.625rem, 0, 0);
   transform: translate3d(-15.625rem, 0, 0);
 }
 /* line 346, assets/components/foundation/scss/foundation/components/_offcanvas.scss */
@@ -8677,8 +8648,6 @@ ul.off-canvas-list li a:hover {
 .offcanvas-overlap .left-off-canvas-menu, .offcanvas-overlap .right-off-canvas-menu {
   -ms-transform: none;
   -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
   transform: none;
   z-index: 1003;
 }
@@ -8709,8 +8678,6 @@ ul.off-canvas-list li a:hover {
 .offcanvas-overlap-left .right-off-canvas-menu {
   -ms-transform: none;
   -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
   transform: none;
   z-index: 1003;
 }
@@ -8741,8 +8708,6 @@ ul.off-canvas-list li a:hover {
 .offcanvas-overlap-right .left-off-canvas-menu {
   -ms-transform: none;
   -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
   transform: none;
   z-index: 1003;
 }
@@ -8802,15 +8767,10 @@ ul.off-canvas-list li a:hover {
   -webkit-overflow-scrolling: touch;
   -ms-transform: translate(-100%, 0);
   -webkit-transform: translate3d(-100%, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0);
   -ms-transform: translate3d(-100%, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
   left: 0;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -ms-transition: -ms-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
 }
 /* line 399, assets/components/foundation/scss/foundation/components/_offcanvas.scss */
@@ -8844,9 +8804,7 @@ ul.off-canvas-list li a:hover {
 .left-submenu.move-right, .left-submenu.offcanvas-overlap-right, .left-submenu.offcanvas-overlap {
   -ms-transform: translate(0%, 0);
   -webkit-transform: translate3d(0%, 0, 0);
-  -moz-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
-  -o-transform: translate3d(0%, 0, 0);
   transform: translate3d(0%, 0, 0);
 }
 
@@ -8866,15 +8824,10 @@ ul.off-canvas-list li a:hover {
   -webkit-overflow-scrolling: touch;
   -ms-transform: translate(100%, 0);
   -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
   right: 0;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -ms-transition: -ms-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
 }
 /* line 399, assets/components/foundation/scss/foundation/components/_offcanvas.scss */
@@ -8908,9 +8861,7 @@ ul.off-canvas-list li a:hover {
 .right-submenu.move-left, .right-submenu.offcanvas-overlap-left, .right-submenu.offcanvas-overlap {
   -ms-transform: translate(0%, 0);
   -webkit-transform: translate3d(0%, 0, 0);
-  -moz-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
-  -o-transform: translate3d(0%, 0, 0);
   transform: translate3d(0%, 0, 0);
 }
 
@@ -9612,40 +9563,6 @@ h2 {
   font-weight: 700;
 }
 
-/* line 1, assets/sass/pages/_page.scss */
-#content {
-  margin: 2rem 0;
-}
-
-/* line 5, assets/sass/pages/_page.scss */
-.entry-meta {
-  margin-bottom: 1.25rem;
-}
-
-/* line 9, assets/sass/pages/_page.scss */
-.updated {
-  display: none;
-}
-
-/* line 13, assets/sass/pages/_page.scss */
-.vcard {
-  display: inherit;
-  padding: 0;
-  border: none;
-  margin: 0;
-}
-
-/* line 20, assets/sass/pages/_page.scss */
-.vcard .fn {
-  font-weight: normal;
-  font-size: 1rem;
-}
-
-/* line 25, assets/sass/pages/_page.scss */
-.entry-content p {
-  margin-bottom: 1.25rem;
-}
-
 /* line 1, assets/sass/sections/_header.scss */
 #masthead {
   background: #ccc;
@@ -9692,6 +9609,40 @@ h2 {
 #secondary h1 {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+/* line 1, assets/sass/pages/_page.scss */
+#content {
+  margin: 2rem 0;
+}
+
+/* line 5, assets/sass/pages/_page.scss */
+.entry-meta {
+  margin-bottom: 1.25rem;
+}
+
+/* line 9, assets/sass/pages/_page.scss */
+.updated {
+  display: none;
+}
+
+/* line 13, assets/sass/pages/_page.scss */
+.vcard {
+  display: inherit;
+  padding: 0;
+  border: none;
+  margin: 0;
+}
+
+/* line 20, assets/sass/pages/_page.scss */
+.vcard .fn {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+/* line 25, assets/sass/pages/_page.scss */
+.entry-content p {
+  margin-bottom: 1.25rem;
 }
 
 /* line 1, assets/sass/_shame.scss */

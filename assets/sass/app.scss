@@ -7,17 +7,17 @@
 // Foundation override file
 @import "settings";
 
-// Our most basic level file type (variables, typography, etc); lots of variables come from 'settings'. They are here because of ease of use instead of having to scroll through a long 'settings' file
+// Our most basic level file type (variables, typography, etc)
 @import "base/base";
 
 // Our second level of file types that make up base files (forms, lists, etc)
 // @import "components/components";
 
-// our largest file types that encompass overall individual page styles
-@import "pages/pages";
-
 // large parts of our site that make up components (header, footer, etc)
 @import "sections/sections";
+
+// our largest file types that encompass overall individual page styles
+@import "pages/pages";
 
 // Quick fix sass file to be used temporarily and moved onto its proper location when time permits
 @import "shame";

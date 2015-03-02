@@ -5,7 +5,7 @@ var	gulp			=	require('gulp'),
 	minifycss		=	require('gulp-minify-css'),
 	rename			=	require('gulp-rename'),
 	autoprefixer	=	require('gulp-autoprefixer'),
-	browsersync		=	require('browser-sync');
+	browserSync		=	require('browser-sync');
 
 // Our browser-sync task.  
 
@@ -15,7 +15,7 @@ gulp.task('browser-sync', function() {
 	];
 
 	browserSync.init(files, {
-		proxy: 'heisenberg:8888/'
+		proxy: 'heisenberg.dev/'
 	});
 });
 
@@ -23,14 +23,16 @@ gulp.task('browser-sync', function() {
 // Our 'styles' tasks, which handles our sass actions such as compliling and minification
 
 gulp.task('styles', function() {
-	return sass('assets/sass/**/*.scss', {
+	return sass('assets/sass/', {
 			style: 'expanded',
 			lineNumbers: true 
 		})
 		.on('error', notify.onError(function(error) {
 			return "Error: " + error.message;
 		}))
-		.pipe(autoprefixer('last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+		.pipe(autoprefixer({ 
+			browsers: ['last 2 versions', 'ie >= 8']
+		})) // our autoprefixer - add and remove vendor prefixes using caniuse.com
 		.pipe(gulp.dest('assets/css')) // Location of our app.css file
 		.pipe(browserSync.reload({stream:true})) // CSS injection when app.css file is written
 		.pipe(rename({suffix: '.min'})) // Create a copy version of our compiled app.css file and name it app.min.css

@@ -18,6 +18,22 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+
+<div class="off-canvas-wrap" data-offcanvas>
+	<div class="inner-wrap">
+
+		<a class="left-off-canvas-toggle" href="#" >Menu</a>
+
+			<!-- Off Canvas Menu -->
+			<aside class="left-off-canvas-menu">
+				<!-- whatever you want goes here -->
+				<ul>
+					<li><a href="#">Item 1</a></li>
+				</ul>
+			</aside>
+
+
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">

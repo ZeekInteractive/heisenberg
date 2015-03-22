@@ -23,15 +23,20 @@
 <div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">
 
-		<a class="left-off-canvas-toggle" href="#" >Menu</a>
+		<nav class="tab-bar show-for-small-only">
+			<section class="left-small">
+				<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+			</section>
+		</nav>
 
-			<!-- Off Canvas Menu -->
-			<aside class="left-off-canvas-menu">
-				<!-- whatever you want goes here -->
-				<ul>
-					<li><a href="#">Item 1</a></li>
-				</ul>
-			</aside>
+		<!-- Off Canvas Menu -->
+		<aside class="left-off-canvas-menu">
+		<!-- whatever you want goes here -->
+			<ul>
+				<li><a href="<?php bloginfo('url'); ?>">Home</a></li>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => '', 'menu_id' => '', 'items_wrap' => '%3$s' ) ); ?>
+			</ul>
+		</aside>
 
 
 <div id="page" class="hfeed site">

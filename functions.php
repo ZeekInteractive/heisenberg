@@ -179,6 +179,17 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+add_filter('wp_head','foundation_header');
+
+function foundation_header(){
+	?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(document).foundation();
+		});
+	</script>
+	<?php
+}
 
 add_filter( 'wp_nav_menu', 'heisenberg_nav_menu', 10, 2 );
 

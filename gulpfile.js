@@ -1,11 +1,11 @@
 // Load our plugins
 var	gulp			=	require('gulp'),
-	sass			=	require('gulp-ruby-sass'),
-	notify			=	require('gulp-notify'),
-	minifycss		=	require('gulp-minify-css'),
-	rename			=	require('gulp-rename'),
-	autoprefixer	=	require('gulp-autoprefixer'),
-	browserSync		=	require('browser-sync');
+	sass			=	require('gulp-ruby-sass'),  // Our sass compiler
+	notify			=	require('gulp-notify'), // Basic gulp notificatin using OS
+	minifycss		=	require('gulp-minify-css'), // Minification
+	rename			=	require('gulp-rename'), // Allows us to rename our css file prior to minifying 
+	autoprefixer	=	require('gulp-autoprefixer'), // Adds vendor prefixes for us
+	browserSync		=	require('browser-sync'); // Sends php, js, img and css updates to browser for us
 
 // Our browser-sync task.  
 
@@ -25,7 +25,8 @@ gulp.task('browser-sync', function() {
 gulp.task('styles', function() {
 	return sass('assets/sass/', {
 			style: 'expanded',
-			lineNumbers: true 
+			lineNumbers: true,
+			container: 'heisenberg' 
 		})
 		.on('error', notify.onError(function(error) {
 			return "Error: " + error.message;

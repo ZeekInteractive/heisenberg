@@ -52,7 +52,7 @@ assets/
 	|	|– _settings.scss 		 # Foundation settings file
 	|	|– app.scss              # primary Sass file 
 </code></pre>
-<h3>Wordpress files</h3>
+<h3>WordPress files</h3>
 Our starter theme follows the Codex Template Heirchacy as found on http://codex.wordpress.org/Template_Hierarchy.
 
 Site Front Page 		-	<code>front-page.php</code><br>

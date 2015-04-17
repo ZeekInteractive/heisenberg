@@ -5,10 +5,10 @@ This is the Zeek Starter theme, based on Underscores and Foundation 5.5.1.
 
 <h2>Dependencies</h2>
 <h3>Gulp</h3>
-The theme dependencies are listed in our <code>package.json</code> file.  If you run <code>npm install</code>, all of the plugin dependencies will be install onto <code>node_modules</code>
+The theme dependencies are listed in our <code>package.json</code> file. If you run <code>npm install</code>, all of the plugin dependencies will be install onto <code>node_modules</code>
 
 <h3>Bower</h3>
-We use bower as our front end package manager.  To get started, run <code>bower install</code> and all of the packages will be brought into the .assets/components directory.  We've overriden the default <code>bower_components</code> directory in <code>.bowerrc</code>; all bower files are sent to <code>./assets/components</code>.
+We use bower as our front end package manager. To get started, run <code>bower install</code> and all of the packages will be brought into the .assets/components directory. We've overriden the default <code>bower_components</code> directory in <code>.bowerrc</code>; all bower files are sent to <code>./assets/components</code>.
 
 <h3>Assets architecture</h3>
 <pre><code>
@@ -50,7 +50,7 @@ assets/
 	|	| 
 	|	| 
 	|	|– _settings.scss 		 # Foundation settings file
-	|	|– app.scss              # primary Sass file 
+	|	|– app.scss              # Primary Sass file 
 </code></pre>
 <h3>WordPress files</h3>
 Our starter theme follows the Codex Template Heirchacy as found on http://codex.wordpress.org/Template_Hierarchy.

@@ -3,15 +3,15 @@ Heisenberg - Zeek Starter Theme
 
 This is the Zeek Starter theme, based on Underscores and Foundation 5.5.1.
 
-<h2>Dependencies</h2>
-<h3>Gulp</h3>
-The theme dependencies are listed in our <code>package.json</code> file. If you run <code>npm install</code>, all of the plugin dependencies will be install onto <code>node_modules</code>
+## Dependencies
+###Gulp
+The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the plugin dependencies will be install onto `node_modules`.
 
-<h3>Bower</h3>
-We use bower as our front end package manager. To get started, run <code>bower install</code> and all of the packages will be brought into the .assets/components directory. We've overriden the default <code>bower_components</code> directory in <code>.bowerrc</code>; all bower files are sent to <code>./assets/components</code>.
+### Bower
+We use bower as our front end package manager. To get started, run `bower install` and all of the packages will be brought into the `.assets/components` directory. We've overriden the default `bower_components` directory in `.bowerrc`; all bower files are sent to `./assets/components`.
 
-<h3>Assets architecture</h3>
-<pre><code>
+### Assets architecture
+```
 assets/	
 	|- components/				# Bower files go here 
 	|
@@ -51,9 +51,9 @@ assets/
 	|	| 
 	|	|– _settings.scss 		 # Foundation settings file
 	|	|– app.scss              # Primary Sass file 
-</code></pre>
-<h3>WordPress files</h3>
+```
+### WordPress files
 Our starter theme follows the Codex Template Heirchacy as found on http://codex.wordpress.org/Template_Hierarchy.
 
-Site Front Page 		-	<code>front-page.php</code><br>
-Blog Posts Index Page 	-	<code>home.php</code>
+Site Front Page 		-	`front-page.php`
+Blog Posts Index Page 	-	`home.php`

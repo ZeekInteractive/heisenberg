@@ -4,7 +4,7 @@ Heisenberg - Zeek Starter Theme
 This is the Zeek Starter theme, based on Underscores and Foundation 5.5.1.
 
 ## Dependencies
-###Gulp
+### Gulp
 The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the plugin dependencies will be installed into `node_modules`.
 
 ### Bower

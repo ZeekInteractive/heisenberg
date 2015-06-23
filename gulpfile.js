@@ -5,7 +5,10 @@ var	gulp				=	require('gulp'),
 	minifycss			=	require('gulp-minify-css'), // Minification
 	rename				=	require('gulp-rename'), // Allows us to rename our css file prior to minifying
 	autoprefixer	=	require('gulp-autoprefixer'), // Adds vendor prefixes for us
-	browserSync		=	require('browser-sync'); // Sends php, js, img and css updates to browser for us
+	browserSync		=	require('browser-sync'), // Sends php, js, img and css updates to browser for us
+	concat			= require('gulp-concat'), // Concat our js
+	uglify			= require('gulp-uglify'), // Minify our js
+	jshint 			= require('gulp-jshint'); // Checks for js errors
 
 // Our browser-sync task.
 
@@ -49,8 +52,35 @@ gulp.task('styles', function() {
 });
 
 
-// Our default gulp task, which runs 'styles' when a sass file changes.  This is task is executed by typing 'gulp' on the Terminal
-gulp.task('default', ['styles', 'browser-sync'], function() {
-	// Watch our sass files and run 'styles' task when changes are made
-	gulp.watch('assets/sass/**/*.scss', ['styles']);
-})
+// Our 'scripts' task, which handles our javascript elements
+gulp.task('js', function() {
+	return gulp.src('./assets/js/**/*.js')
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest('./assets/dist/js'))
+		.pipe(rename({suffix: '.min'}))
+		.pipe(uglify())
+		.pipe(gulp.dest('./assets/dist/js'))
+		.pipe(browserSync.reload({stream:true}))
+		.pipe(notify({ message: "Scripts task complete!"}));
+});
+
+
+// Our 'jsHint' task, which checks for JS errors
+gulp.task('jsHint', function() {
+	return gulp.src('./assets/js/**/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'))
+		.pipe( notify( { message: "jsHint task complete", onLast: true } ) );
+} );
+
+
+// Watch our files and fire off a task when something changes
+gulp.task('watch', function() {
+	gulp.watch('./assets/sass/**/*.scss', ['styles']);
+	gulp.watch('./assets/js/**/*.js', ['jsHint']);
+	gulp.watch('./assets/js/**/*.js', ['js']);
+});
+
+
+// Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
+gulp.task('default', ['styles', 'js', 'jsHint', 'browser-sync', 'watch']);

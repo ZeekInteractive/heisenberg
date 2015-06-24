@@ -110,12 +110,12 @@ if ( !function_exists( 'heisenberg_styles' ) ) :
 		if ( WP_DEBUG ) :
 
 			// Enqueue our debug stylesheet [development mode - non-minified]
-			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/css/app.css', '', '9' );
+			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/dist/css/app.css', '', '9' );
 
 		else :
 
 			// Enqueue our minified stylesheet [production mode - minified stylesheet]
-			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/css/app.min.css', '', '9' );
+			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/dist/css/app.min.css', '', '9' );
 
 		endif;
 

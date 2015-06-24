@@ -38,13 +38,13 @@ gulp.task('styles', function() {
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions', 'ie >= 8']
 		})) // our autoprefixer - add and remove vendor prefixes using caniuse.com
-		.pipe(gulp.dest('assets/css')) // Location of our app.css file
+		.pipe(gulp.dest('./assets/dist/css')) // Location of our app.css file
 		.pipe(browserSync.reload({stream:true})) // CSS injection when app.css file is written
 		.pipe(rename({suffix: '.min'})) // Create a copy version of our compiled app.css file and name it app.min.css
 		.pipe(minifycss({
 			keepSpecialComments:0
 		})) // Minify our newly copied app.min.css file
-		.pipe(gulp.dest('assets/css')) // Save app.min.css onto this directory
+		.pipe(gulp.dest('./assets/dist/css')) // Save app.min.css onto this directory
 		.pipe(browserSync.reload({stream:true})) // CSS injection when app.min.css file is written
 		.pipe(notify({
 			message: "Styles task complete!"

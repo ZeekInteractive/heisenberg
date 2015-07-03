@@ -69,6 +69,6 @@
 // @param {string} $base-value - base pixel value for rem conversion
 // @requires $value
 @mixin rem-fallback($value, $property: 'font-size', $base-value: $rem-base){
-    #{$property}: $value + px;
-    #{$property}: rem-calc($value, $base-value: $rem-base);
+	#{$property}: $value + px;
+	#{$property}: rem-calc($value, $base-value: $rem-base);
 }

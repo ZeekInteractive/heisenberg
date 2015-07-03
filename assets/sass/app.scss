@@ -14,9 +14,11 @@
 @import "components/components";
 
 // large parts of our site that make up components (header, footer, etc)
+// Large parts of our site that make up components (header, footer, etc)
 @import "sections/sections";
 
 // our largest file types that encompass overall individual page styles
+// Our largest file types that encompass overall individual page styles
 @import "pages/pages";
 
 // Quick fix sass file to be used temporarily and moved onto its proper location when time permits

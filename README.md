@@ -62,7 +62,7 @@ assets/
 	|	|
 	|	|– base/ 				 # Base element custom styles such as type, buttons, colors, etc. (non-Foundation stuff)
 	|	|   |– _buttons.scss     # Buttons
-	|	|	|– _mixins.scss      # Starting mixin library
+	|	|   |– _mixins.scss      # Starting mixin library
 	|	|   |– _typography.scss  # Typography rules
 	|	|   |– _variables.scss   # Forms  
 	|	|   ...                  # Etc.

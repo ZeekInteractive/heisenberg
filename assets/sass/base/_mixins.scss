@@ -1,0 +1,74 @@
+// Breakpoint media query mixin
+// 
+// Our custom breakpoint mixin since Foundations @media functions only allow defined Foundation size variables.  
+// Sometimes you just need a breakpoint at a specific size, which is what this mixin allows you to do.  Enjoy!
+// $breakpoint-default set in /assets/sass/base/_variables to change default
+// 
+// @param {string} $breakpoint - breakpoint value measured in any unit
+// @param {string} $size - width specification, value is 'min' or 'max'
+@mixin breakpoint( $breakpoint: $breakpoint-default, $size: min ) {
+	@media only screen and (#{$size}-width : $breakpoint) {
+		@content;
+	}
+}
+
+// .sample-element {
+// 		border-bottom: 1px solid $color-primary;
+// 		font-family: $font-primary;
+// 		font-size: 1.2rem;
+// 		margin-top: 10px;
+//	
+//	@include breakpoint { // default breakpoint
+// 		margin-top: 0;
+// 	}
+// 	
+//  @include breakpoint( 5rem ) {
+// 		font-size: 8rem;
+// 	}
+//
+// 	@include breakpoint( 800px ) {
+// 		font-size: 2rem;
+// 		margin-top: 35px;
+// 	}
+//
+//  @include breakpoint( 456px, max ) {
+// 		font-size: 1rem;
+// 		margin-top: 20px;
+// 	}
+// }
+
+// Center block element
+// 
+// make sure $size-content-max is declared
+// $size-default-width set in /assets/scss/base/_variables.scss
+// 
+// @param {string} $max - maximum width for block element
+@mixin center($max: $size-default-width) {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $max;
+	width: 100%;
+}
+
+// Describe all psuedo state classes
+@mixin hover {
+	&:active, &:focus, &:hover {
+		@content;
+	}
+}
+
+// Rem output with px fallback
+// 
+// Necessary if supporting < IE9, and recommended if supporting < IE11
+// Uses rem-calc from Foundation and adds pixel fallback. 
+// Can be used for any property, defaults to font-size
+// 
+// @param {int} $value - pixel value of element size
+// @param {string} $property - css property
+// @param {string} $base-value - base pixel value for rem conversion
+// @requires $value
+@mixin rem-fallback($value, $property: 'font-size', $base-value: $rem-base){
+	#{$property}: $value + px;
+	#{$property}: rem-calc($value, $base-value: $rem-base);
+}

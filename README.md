@@ -62,6 +62,7 @@ assets/
 	|	|
 	|	|– base/ 				 # Base element custom styles such as type, buttons, colors, etc. (non-Foundation stuff)
 	|	|   |– _buttons.scss     # Buttons
+	|	|   |– _mixins.scss      # Starting mixin library
 	|	|   |– _typography.scss  # Typography rules
 	|	|   |– _variables.scss   # Forms  
 	|	|   ...                  # Etc.
@@ -84,6 +85,7 @@ assets/
 	|	|
 	|	|
 	|	|– _settings.scss 		 # Foundation settings file
+	|	|- _shame.scss 			 # Temporary work arounds
 	|	|– app.scss              # Primary Sass file
 ```
 ## WordPress files

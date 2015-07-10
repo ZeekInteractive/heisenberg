@@ -96,4 +96,4 @@ Site Front Page 		-	`front-page.php`
 ## History
 
 This project is based off of Automattic's `_s` project, based on the distribution zip
-generated off of commit `d5c78acc1061196fb90376a530de48ce9f4816ed`.
+generated off of commit [`d5c78acc1061196fb90376a530de48ce9f4816ed`](https://github.com/Automattic/_s/tree/d5c78acc1061196fb90376a530de48ce9f4816ed).

@@ -64,7 +64,7 @@ assets/
 	|	|   |– _buttons.scss     # Buttons
 	|	|   |– _mixins.scss      # Starting mixin library
 	|	|   |– _typography.scss  # Typography rules
-	|	|   |– _variables.scss   # Forms  
+	|	|   |– _variables.scss   # Forms
 	|	|   ...                  # Etc.
 	|	|
 	|	|– components/  		 # Element items that are a combination of base items
@@ -92,3 +92,8 @@ assets/
 Our starter theme follows the Codex Template Hierarchy as found on http://codex.wordpress.org/Template_Hierarchy.
 
 Site Front Page 		-	`front-page.php`
+
+## History
+
+This project is based off of Automattic's `_s` project, based on the distribution zip
+generated off of commit `d5c78acc1061196fb90376a530de48ce9f4816ed`.

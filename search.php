@@ -47,5 +47,5 @@ get_header(); ?>
 
 	</section><!-- columns -->
 </section><!-- row -->
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -20,9 +20,9 @@ The theme dependencies are listed in our `package.json` file. If you run `npm in
 
 Using the `gulpfile.js` file, gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading.  It will automate a lot of tedious tasks for us.  Magic!
 
-**Important:**  you’ll need to change both the proxy string from `'heisenberg.dev/'` to your local URL and the container string from `'heisenberg'` to your project name.
+**Important:**  you need to change the proxy string from `'heisenberg.dev/'` to your local URL.
 
-Once you’ve adjusted the two strings, from Terminal or Command Prompt run `gulp`.  Gulp will watch your Sass files and will compile when a change is made.  Also, <a href="http://www.browsersync.io/docs/gulp/" title="BrowserSync documentation">BrowserSync</a> will run and inject new CSS after compilation and will reload the browser when your PHP files change.
+Once you’ve adjusted the string, from Terminal or Command Prompt, navigate to your theme directory and run `gulp`.  Gulp will watch your Sass files and will compile when a change is made.  Also, <a href="http://www.browsersync.io/docs/gulp/" title="BrowserSync documentation">BrowserSync</a> will run and inject new CSS after compilation and will reload the browser when your PHP files change.
 
 **CSS/Sass Tasks** – gulp will compile a minified and non-minified CSS file for you.  The theme will enqueue the non-minified CSS file if `WP_DEBUG` is set to true in the `wp-config.php` file.  It’s generally a good practice to do so anyway when developing themes.
 

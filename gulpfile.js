@@ -1,11 +1,11 @@
 // Load our plugins
-var	gulp				=	require('gulp'),
-	sass					=	require('gulp-sass'),  // Our sass compiler
-	notify				=	require('gulp-notify'), // Basic gulp notificatin using OS
-	minifycss			=	require('gulp-minify-css'), // Minification
-	rename				=	require('gulp-rename'), // Allows us to rename our css file prior to minifying
-	autoprefixer	=	require('gulp-autoprefixer'), // Adds vendor prefixes for us
-	browserSync		=	require('browser-sync'), // Sends php, js, img and css updates to browser for us
+var	gulp			= require('gulp'),
+	sass			= require('gulp-sass'),  // Our sass compiler
+	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
+	minifycss		= require('gulp-minify-css'), // Minification
+	rename			= require('gulp-rename'), // Allows us to rename our css file prior to minifying
+	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
+	browserSync		= require('browser-sync'), // Sends php, js, img and css updates to browser for us
 	concat			= require('gulp-concat'), // Concat our js
 	uglify			= require('gulp-uglify'), // Minify our js
 	jshint 			= require('gulp-jshint'); // Checks for js errors

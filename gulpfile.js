@@ -2,7 +2,7 @@
 var	gulp			= require('gulp'),
 	sass			= require('gulp-sass'),  // Our sass compiler
 	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
-	minifycss		= require('gulp-minify-css'), // Minification
+	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
 	rename			= require('gulp-rename'), // Allows us to rename our css file prior to minifying
 	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
 	browserSync		= require('browser-sync'), // Sends php, js, img and css updates to browser for us
@@ -27,25 +27,20 @@ gulp.task('browser-sync', function() {
 
 gulp.task('styles', function() {
 	gulp.src('assets/sass/**/*.scss')
+		.pipe(sourcemaps.init())
 		.pipe(sass({
-			style: 'expanded',
-			sourceComments: true
+			outputStyle: 'compressed'
 		})
 		.on('error', notify.onError(function(error) {
 			return "Error: " + error.message;
 		}))
 		)
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 8']
+			browsers: ['last 2 versions', 'ie >= 9']
 		})) // our autoprefixer - add and remove vendor prefixes using caniuse.com
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./assets/dist/css')) // Location of our app.css file
-		.pipe(browserSync.reload({stream:true})) // CSS injection when app.css file is written
-		.pipe(rename({suffix: '.min'})) // Create a copy version of our compiled app.css file and name it app.min.css
-		.pipe(minifycss({
-			keepSpecialComments:0
-		})) // Minify our newly copied app.min.css file
-		.pipe(gulp.dest('./assets/dist/css')) // Save app.min.css onto this directory
-		.pipe(browserSync.reload({stream:true})) // CSS injection when app.min.css file is written
+		.pipe(browserSync.stream({match: '**/*.css'}))
 		.pipe(notify({
 			message: "Styles task complete!"
 		}));

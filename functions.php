@@ -100,34 +100,16 @@ add_action( 'widgets_init', 'heisenberg_widgets_init' );
 /**
  * Enqueue styles.
  */
-
 if ( !function_exists( 'heisenberg_styles' ) ) :
 
 	function heisenberg_styles() {
-
-		// Conditional css for debug or production mode
-
-		if ( WP_DEBUG ) :
-
-			// Enqueue our debug stylesheet [development mode - non-minified]
-			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/dist/css/app.css', '', '9' );
-
-		else :
-
-			// Enqueue our minified stylesheet [production mode - minified stylesheet]
-			wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/dist/css/app.min.css', '', '9' );
-
-		endif;
-
-
+		// Enqueue our stylesheet
+		wp_enqueue_style( 'heisenberg_styles', get_stylesheet_directory_uri() . '/assets/dist/css/app.css', '', '1.1.0' );
 	}
-
 
 add_action( 'wp_enqueue_scripts', 'heisenberg_styles' );
 
 endif;
-
-
 
 
 /**

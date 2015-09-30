@@ -26,7 +26,7 @@ gulp.task('browser-sync', function() {
 // Our 'styles' tasks, which handles our sass actions such as compliling and minification
 
 gulp.task('styles', function() {
-		gulp.src('./assets/sass/**/*.scss')
+	gulp.src('assets/sass/**/*.scss')
 		.pipe(sass({
 			style: 'expanded',
 			sourceComments: true
@@ -76,7 +76,7 @@ gulp.task('jsHint', function() {
 
 // Watch our files and fire off a task when something changes
 gulp.task('watch', function() {
-	gulp.watch('./assets/sass/**/*.scss', ['styles']);
+	gulp.watch('assets/sass/**/*.scss', ['styles']);
 	gulp.watch('./assets/js/**/*.js', ['jsHint']);
 	gulp.watch('./assets/js/**/*.js', ['js']);
 });

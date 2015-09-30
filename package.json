@@ -13,11 +13,8 @@
   },
   "name": "heisenberg",
   "description": "Heisenberg - Zeek Starter Theme ===",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.8.11"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

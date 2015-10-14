@@ -13,7 +13,7 @@ This is the Zeek Starter theme, based on <a href="http://underscores.me/">Unders
 
 ## Dependencies
 ### Bower
-**Install Foundation using Bower.** We use Bower as our front end package manager. To get started, run `bower install` and all of the packages will be brought into the `.assets/components` directory. We overwrote the default `bower_components` directory in `.bowerrc`; all Bower files are sent to `./assets/components`.
+**Install Foundation using Bower.** We use Bower as our front end package manager. To get started, run `bower install` and all of the packages will be brought into the `./assets/components` directory. We overwrote the default `bower_components` directory in `.bowerrc`; all Bower files are sent to `./assets/components`.
 
 ### Gulp
 The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the plugin dependencies will be installed into `node_modules`.

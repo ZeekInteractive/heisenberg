@@ -79,7 +79,7 @@ assets/
 	|	|   ...                  # Etc.
 	|	|
 	|	|– vendors/ 			 # 3rd-party element items such as plugins and core WordPress overwrites
-	|	|   |– _wordpress.scss   # Header
+	|	|   |– _wordpress.scss   # WordPress style adjustments
 	|	|   ...                  # Etc.
 	|	|
 	|	|– pages/ 				 # Page specific styles

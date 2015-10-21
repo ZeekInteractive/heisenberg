@@ -53,7 +53,11 @@ gulp.task('js', function() {
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('./assets/dist/js'))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(uglify())
+		.pipe(uglify()
+		.on('error', notify.onError(function(error) {
+			return "Error: " + error.message;
+		}))
+		)
 		.pipe(gulp.dest('./assets/dist/js'))
 		.pipe(browserSync.reload({stream:true}))
 		.pipe(notify({ message: "Scripts task complete!"}));

@@ -19,5 +19,8 @@
 // Our largest file types that encompass overall individual page styles
 @import "pages/pages";
 
+// Third-party file types such as plugins and WordPress
+@import "vendors/vendors";
+
 // Quick fix sass file to be used temporarily and moved onto its proper location when time permits
 @import "shame";

@@ -78,6 +78,10 @@ assets/
 	|	|   |– _sidebar.scss     # Sidebar
 	|	|   ...                  # Etc.
 	|	|
+	|	|– vendors/ 			 # 3rd-party element items such as plugins and core WordPress overwrites
+	|	|   |– _wordpress.scss   # Header
+	|	|   ...                  # Etc.
+	|	|
 	|	|– pages/ 				 # Page specific styles
 	|	|   |– _front-page.scss  # Home specific styles
 	|	|	|– _page.scss  		 # Page specific styles

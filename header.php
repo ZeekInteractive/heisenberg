@@ -2,7 +2,9 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Heisenberg
  */
@@ -53,13 +55,17 @@
 
 						<div class="small-12 columns"><!-- .columns start -->
 
+			<?php if ( is_front_page() && is_home() ) : ?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php endif; ?>
 
 						</div><!-- .columns end -->
 
 						<div class="small-12 columns"><!-- .columns start -->
 
-							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+							<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 
 						</div><!-- .columns end -->
 
@@ -81,7 +87,7 @@
 
 				<nav id="site-navigation" class="top-bar hide-for-small" data-topbar role="navigation">
 					<section class="top-bar-section">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 					</section>
 				</nav><!-- #site-navigation -->
 

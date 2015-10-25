@@ -1,16 +1,11 @@
 <?php
 /**
- * Heisenberg functions and definitions
+ * Heisenberg functions and definitions.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Heisenberg
  */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
 
 if ( ! function_exists( 'heisenberg_setup' ) ) :
 /**
@@ -26,7 +21,7 @@ function heisenberg_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Heisenberg, use a find and replace
-	 * to change 'heisenberg' to the name of your theme in all the template files
+	 * to change 'heisenberg' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'heisenberg', get_template_directory() . '/languages' );
 
@@ -44,13 +39,13 @@ function heisenberg_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'heisenberg' ),
+		'primary' => esc_html__( 'Primary Menu', 'heisenberg' ),
 	) );
 
 	/*
@@ -58,15 +53,23 @@ function heisenberg_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
 	) );
 
 	/*
 	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -78,14 +81,27 @@ function heisenberg_setup() {
 endif; // heisenberg_setup
 add_action( 'after_setup_theme', 'heisenberg_setup' );
 
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function _heisenberg_content_width() {
+	$GLOBALS['content_width'] = apply_filters( '_heisenberg_content_width', 640 );
+}
+add_action( 'after_setup_theme', '_heisenberg_content_width', 0 );
+
 /**
  * Register widget area.
  *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function heisenberg_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'heisenberg' ),
+		'name'          => esc_html__( 'Sidebar', 'heisenberg' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -95,7 +111,6 @@ function heisenberg_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'heisenberg_widgets_init' );
-
 
 /**
  * Enqueue styles.
@@ -151,7 +166,7 @@ add_action( 'wp_enqueue_scripts', 'heisenberg_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

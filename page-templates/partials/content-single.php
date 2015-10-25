@@ -1,5 +1,9 @@
 <?php
 /**
+ * Template part for displaying single posts.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
  * @package Heisenberg
  */
 ?>
@@ -17,7 +21,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'heisenberg' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'heisenberg' ),
 				'after'  => '</div>',
 			) );
 		?>

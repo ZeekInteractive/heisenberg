@@ -4,18 +4,16 @@ This is the Zeek Starter theme, based on <a href="http://underscores.me/">Unders
 
 ## How to get started
 ### Prerequisites
-* Install <a href="https://nodejs.org/download/" title="Permalink to the Node.js website for download instructions">Node.js</a>
-* Install <a href="http://sass-lang.com/install" title="Permalink to the Sass website for install instructions">Sass</a>
-* Install Bower - from Terminal or Command Prompt run `npm install --g bower`
-* Install Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
+* <a href="https://nodejs.org/download/" title="Permalink to the Node.js website for download instructions">Node.js</a> - we use the node wrapper of libsass and NPM throughout
+* Bower - from Terminal or Command Prompt run `npm install --g bower`
+* Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
 
 **Note: if you run into errors when using Terminal, you may have to use the sudo command to install Bower or Gulp.js. For instance, `sudo npm install -g bower`**
 
-## Dependencies
-### Bower
-**Install Foundation using Bower.** We use Bower as our front end package manager. To get started, run `bower install` and all of the packages will be brought into the `./assets/components` directory. We overwrote the default `bower_components` directory in `.bowerrc`; all Bower files are sent to `./assets/components`.
+### Install Foundation Assets via Bower
+We use Bower as our front end package manager. To get started, run `bower install` and all of the packages will be brought into the `.assets/components` directory. We overwrote the default `bower_components` directory in `.bowerrc`; all Bower files are sent to `./assets/components`.
 
-### Gulp
+### Install Gulp Modules via NPM
 The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the plugin dependencies will be installed into `node_modules`.
 
 Using the `gulpfile.js` file, gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading.  It will automate a lot of tedious tasks for us.  Magic!

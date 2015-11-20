@@ -191,3 +191,16 @@ function heisenberg_nav_menu( $menu ){
 	$menu = str_replace('current-menu-item', 'current-menu-item active', $menu);
 	return $menu;
 }
+
+
+/** 
+ * Make oembed elements responsive. Add Foundation's .flex-video class wrapper
+ * around any oembeds 
+ */
+ 
+add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 ) ;
+
+function heisenberg_oembed_flex_wrapper( $html, $url, $attr, $post_ID ) {
+	$return = '<div class="flex-video">'.$html.'</div>';
+	return $return;
+}

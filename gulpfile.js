@@ -49,7 +49,7 @@ gulp.task('styles', function() {
 
 // Our 'scripts' task, which handles our javascript elements
 gulp.task('js', function() {
-	return gulp.src('./assets/js/**/*.js')
+	return gulp.src('assets/js/**/*.js')
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('./assets/dist/js'))
 		.pipe(rename({suffix: '.min'}))
@@ -76,8 +76,8 @@ gulp.task('jsHint', function() {
 // Watch our files and fire off a task when something changes
 gulp.task('watch', function() {
 	gulp.watch('assets/sass/**/*.scss', ['styles']);
-	gulp.watch('./assets/js/**/*.js', ['jsHint']);
-	gulp.watch('./assets/js/**/*.js', ['js']);
+	gulp.watch('assets/js/**/*.js', ['jsHint']);
+	gulp.watch('assets/js/**/*.js', ['js']);
 });
 
 

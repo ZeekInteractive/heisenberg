@@ -118,7 +118,7 @@ endif;
 function heisenberg_scripts() {
 
 	// Add core Foundation js to footer
-	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/components/foundation/js/foundation.min.js', array( 'jquery' ), '5', true );
+	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/node_modules/foundation-sites/dist/foundation.js', array( 'jquery' ), '6.0.3', true );
 
 	// Add our concatenated js file
 	if ( WP_DEBUG ) {
@@ -159,17 +159,7 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-add_filter('wp_head','foundation_header');
 
-function foundation_header(){
-	?>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(document).foundation();
-		});
-	</script>
-	<?php
-}
 
 add_filter( 'wp_nav_menu', 'heisenberg_nav_menu', 10, 2 );
 
@@ -179,11 +169,11 @@ function heisenberg_nav_menu( $menu ){
 }
 
 
-/** 
+/**
  * Make oembed elements responsive. Add Foundation's .flex-video class wrapper
- * around any oembeds 
+ * around any oembeds
  */
- 
+
 add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 ) ;
 
 function heisenberg_oembed_flex_wrapper( $html, $url, $attr, $post_ID ) {

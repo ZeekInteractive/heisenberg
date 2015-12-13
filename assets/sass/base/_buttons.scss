@@ -1,3 +1,4 @@
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
   @include button;
 }

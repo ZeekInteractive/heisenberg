@@ -1,15 +1,15 @@
 #Heisenberg - Zeek Starter Theme
 
-This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation 6.0.3.
+This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version 6.0.5.
 
 ## How to get started
 ### Prerequisites
-* <a href="https://nodejs.org/download/" title="Permalink to the Node.js website for download instructions">Node.js</a> - we use the node wrapper of libsass and NPM throughout
+* Node.js 4.x.x and npm 2.x.x
 * Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
 
 **Note: if you run into errors when using Terminal, you may have to use the sudo command to install Gulp.js. For instance, `sudo npm install -g gulp`**
 
-### Install Foundation and Gulp Modules via NPM
+### Install Foundation Sites and Gulp Modules via NPM
 The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the theme dependencies will be installed into `node_modules`.
 
 Using the `gulpfile.js` file, gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading.  It will automate a lot of tedious tasks for us.  Magic!

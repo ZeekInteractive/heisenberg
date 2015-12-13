@@ -1,0 +1,12 @@
+.mobile-menu {
+  @include reset-list;
+  a {
+    padding: rem-calc(8 20);
+    display: block;
+  }
+}
+
+a.ofc-home {
+  padding: rem-calc(8 20);
+  display: block;
+}

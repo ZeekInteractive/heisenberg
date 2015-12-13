@@ -13,7 +13,7 @@
   },
   "name": "heisenberg",
   "description": "Heisenberg - Zeek Starter Theme ===",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/ZeekInteractive/heisenberg/issues"
   },
-  "homepage": "https://github.com/ZeekInteractive/heisenberg"
+  "homepage": "https://github.com/ZeekInteractive/heisenberg",
+  "dependencies": {
+    "foundation-sites": "^6.0.5"
+  }
 }

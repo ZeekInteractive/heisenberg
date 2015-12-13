@@ -1,20 +1,16 @@
 #Heisenberg - Zeek Starter Theme
 
-This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation 5.5.1.
+This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version 6.0.5.
 
 ## How to get started
 ### Prerequisites
-* <a href="https://nodejs.org/download/" title="Permalink to the Node.js website for download instructions">Node.js</a> - we use the node wrapper of libsass and NPM throughout
-* Bower - from Terminal or Command Prompt run `npm install --g bower`
+* Node.js 4.x.x and npm 2.x.x
 * Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
 
-**Note: if you run into errors when using Terminal, you may have to use the sudo command to install Bower or Gulp.js. For instance, `sudo npm install -g bower`**
+**Note: if you run into errors when using Terminal, you may have to use the sudo command to install Gulp.js. For instance, `sudo npm install -g gulp`**
 
-### 1. Install Foundation Assets via Bower
-We use Bower as our front end package manager. To get started, run `bower install` and all of the packages will be brought into the `.assets/components` directory. We overwrote the default `bower_components` directory in `.bowerrc`; all Bower files are sent to `./assets/components`.
-
-### 2. Install Gulp Modules via NPM
-The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the plugin dependencies will be installed into `node_modules`.
+### Install Foundation Sites and Gulp Modules via NPM
+The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the theme dependencies will be installed into `node_modules`.
 
 Using the `gulpfile.js` file, gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading.  It will automate a lot of tedious tasks for us.  Magic!
 
@@ -33,7 +29,7 @@ The theme will enqueue the non-minified JS file if `WP_DEBUG` is set to true in 
 ## How to use the Foundation Sass files
 Using the `_settings.scss` file, you can overwrite a Foundation default style before things get compiled, thereby making your final CSS lighter.  To do so, find the variable in the file, uncomment it, and set the value you desire.  The file is located in `./assets/sass`.
 
-Be sure to check <a href="http://foundation.zurb.com/docs/using-sass.html" title="Zurb Foundation documentation on using Sass">Foundation’s docs on using Sass</a> and their mixins for custom control on styles.
+Be sure to check <a href="http://foundation.zurb.com/sites/docs/sass.html" title="Zurb Foundation documentation on using Sass">Foundation’s docs on using Sass</a> and their mixins for custom control on styles.
 
 ## Assets architecture
 ```

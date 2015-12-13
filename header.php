@@ -19,76 +19,44 @@
 
 <body <?php body_class(); ?>>
 
-
-<div class="off-canvas-wrap" data-offcanvas>
-	<div class="inner-wrap">
-
-		<nav class="tab-bar show-for-small-only">
-			<section class="left-small">
-				<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-			</section>
-		</nav>
-
-		<!-- Off Canvas Menu -->
-		<aside class="left-off-canvas-menu">
-		<!-- whatever you want goes here -->
-			<ul>
-				<li><a href="<?php bloginfo('url'); ?>">Home</a></li>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => '', 'menu_id' => '', 'items_wrap' => '%3$s' ) ); ?>
-			</ul>
-		</aside>
-
-
-<div id="page" class="hfeed site">
-
-	<header id="masthead" class="site-header" role="banner">
-
-		<div class="row"><!-- .row start -->
-
-			<div class="small-12 columns"><!-- .columns start -->
-
-				<div class="site-branding">
-
-					<div class="row"><!-- .row start -->
-
-						<div class="small-12 columns"><!-- .columns start -->
-
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-						</div><!-- .columns end -->
-
-						<div class="small-12 columns"><!-- .columns start -->
-
-							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-
-						</div><!-- .columns end -->
-
-					</div><!-- .row end -->
-
-				</div><!-- .site-branding -->
-
-			</div><!-- .columns end -->
-
-		</div><!-- .row end -->
-
-	</header><!-- #masthead -->
-
-	<div class="main-navigation">
-
-		<div class="row"><!-- .row start -->
-
-			<div class="small-12 columns"><!-- .columns start -->
-
-				<nav id="site-navigation" class="top-bar hide-for-small" data-topbar role="navigation">
-					<section class="top-bar-section">
+<div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas data-position="left">
+			<button class="close-button" aria-label="Close alert" type="button" data-toggle="offCanvasLeft">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<a href="<?php bloginfo('url'); ?>" class="ofc-home">Home</a>
+			<?php
+			 $args = array (
+				 'theme_location' 	=> 'primary',
+				 'container' 				=> 'nav',
+				 'container_class'	=> 'offcanvas-navigation',
+				 'menu_class' 			=> 'mobile-menu',
+			 );
+				wp_nav_menu( $args );
+			?>
+    </div><!-- #offCanvasLeft -->
+    <div class="off-canvas-content" data-off-canvas-content>
+			<div class="title-bar show-for-small-only">
+			  <div class="title-bar-left">
+			    <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+			    <span class="title-bar-title"><?php bloginfo( 'name' ); ?></span>
+			  </div>
+			</div><!-- .title-bar -->
+			<header id="masthead" class="" role="banner">
+				<section class="row column">
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</h1>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				</section>
+				<nav id="site-navigation" class="top-bar show-for-medium" data-topbar role="navigation">
+					<section class="top-bar-section row column">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</section>
 				</nav><!-- #site-navigation -->
+			</header><!-- #masthead -->
 
-			</div><!-- .columns end -->
-
-		</div><!-- .row end -->
-
-	</div><!-- .main-navigation -->
-
-	<div id="content" class="site-content">
+			<div id="content" class="site-content">

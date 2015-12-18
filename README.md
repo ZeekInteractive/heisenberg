@@ -31,11 +31,9 @@ Using the `_settings.scss` file, you can overwrite a Foundation default style be
 
 Be sure to check <a href="http://foundation.zurb.com/sites/docs/sass.html" title="Zurb Foundation documentation on using Sass">Foundation’s docs on using Sass</a> and their mixins for custom control on styles.
 
-## Assets architecture
+## Assets + NPM architecture
 ```
 assets/
-	|- components/				# Bower files go here
-	|
 	|- dist/						# Gulp generated files enqueued by theme go here
 	|	|
 	|	|- css/
@@ -85,6 +83,11 @@ assets/
 	|	|– _settings.scss 		 # Foundation settings file
 	|	|- _shame.scss 			 # Temporary work arounds
 	|	|– app.scss              # Primary Sass file
+	| |
+	| |
+node_modules/					# Foundation for sites + gulp plugins
+	| |
+	| |-foundation-sites/
 ```
 ## WordPress files
 Our starter theme follows the Codex Template Hierarchy as found on http://codex.wordpress.org/Template_Hierarchy.

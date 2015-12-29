@@ -22,7 +22,7 @@
 
     this._init();
 
-    Foundation.registerPlugin(this);
+    Foundation.registerPlugin(this, 'Drilldown');
     Foundation.Keyboard.register('Drilldown', {
       'ENTER': 'open',
       'SPACE': 'open',
@@ -63,7 +63,7 @@
   Drilldown.prototype._init = function(){
     this.$submenuAnchors = this.$element.find('li.has-submenu');
     this.$submenus = this.$submenuAnchors.children('[data-submenu]');
-    this.$menuItems = this.$element.find('li:visible').not('.js-drilldown-back').attr('role', 'menuitem');
+    this.$menuItems = this.$element.find('li').not('.js-drilldown-back').attr('role', 'menuitem');
 
     this._prepareMenu();
 
@@ -98,8 +98,8 @@
           $back = $menu.find('.js-drilldown-back');
       if(!$back.length){
         $menu.prepend(_this.options.backButton);
-        _this._back($menu);
       }
+      _this._back($menu);
     });
     if(!this.$element.parent().hasClass('is-drilldown')){
       this.$wrapper = $(this.options.wrapper).addClass('is-drilldown').css(this._getMaxDims());
@@ -157,7 +157,7 @@
           return;
         }
       });
-      Foundation.Keyboard.handleKey(e, _this, {
+      Foundation.Keyboard.handleKey(e, 'Drilldown', {
         next: function() {
           if ($element.is(_this.$submenuAnchors)) {
             _this._show($element);

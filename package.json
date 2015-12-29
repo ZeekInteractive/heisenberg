@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/ZeekInteractive/heisenberg",
   "dependencies": {
-    "foundation-sites": "^6.0.5"
+    "foundation-sites": "^6.1.1"
   }
 }

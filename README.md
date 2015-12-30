@@ -1,22 +1,23 @@
-#Heisenberg - Zeek Starter Theme
+# Heisenberg - Zeek Starter Theme
 
 This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version 6.1.1.
 
-## How to get started
-### Prerequisites
+
+## Prerequisites
 * Node.js 4.x.x and npm 2.x.x
 * Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
 
 **Note: if you run into errors when using Terminal, you may have to use the sudo command to install Gulp.js. For instance, `sudo npm install -g gulp`**
 
+## How to get started
 ### Install Foundation Sites and Gulp Modules via NPM
-The theme dependencies are listed in our `package.json` file. If you run `npm install`, all of the theme dependencies will be installed into `node_modules`.
+1. Clone or [download](https://github.com/ZeekInteractive/heisenberg/archive/master.zip "Download the Heisenberg Zip") the project onto your `themes` directory `(./wp-content/themes)`
+2. From the theme directory, run `npm install`. All of the theme dependencies will be installed into `node_modules`.
+3. Run a find and replace to remove the `heisenberg` slug/string throughout with your project name.
+4. Run `gulp`
 
-Using the `gulpfile.js` file, gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading.  It will automate a lot of tedious tasks for us.  Magic!
-
-**Important:**  you need to change the proxy string from `'heisenberg.dev/'` to your local URL.
-
-Once you’ve adjusted the string, from Terminal or Command Prompt, navigate to your theme directory and run `gulp`.  Gulp will watch your Sass files and will compile when a change is made.  Also, <a href="http://www.browsersync.io/docs/gulp/" title="BrowserSync documentation">BrowserSync</a> will run and inject new CSS after compilation and will reload the browser when your PHP files change.
+## Gulp
+Gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading. It will watch your Sass, JS and PHP files and will compile when a change is made, inject new CSS after compilation and will reload the browser when your PHP and JS files change.
 
 **CSS/Sass Tasks** – gulp will compile a compressed CSS and sourcemap file for you.
 
@@ -29,6 +30,8 @@ The theme will enqueue the non-minified JS file if `WP_DEBUG` is set to true in 
 ## How to use the Foundation Sass files
 Using the `_settings.scss` file, you can overwrite a Foundation default style before things get compiled, thereby making your final CSS lighter.  To do so, find the variable in the file, uncomment it, and set the value you desire.  The file is located in `./assets/sass`.
 
+Also, in the `app.scss` file, you can remove a Foundation CSS module by commenting out the associated mixin. For instance, if your project doesn't use Foundation's Orbit module, simply comment out the `@include foundation-orbit` mixin and the code will never reach your final `app.css` file.
+
 Be sure to check <a href="http://foundation.zurb.com/sites/docs/sass.html" title="Zurb Foundation documentation on using Sass">Foundation’s docs on using Sass</a> and their mixins for custom control on styles.
 
 ## Assets + NPM architecture
@@ -40,6 +43,7 @@ assets/
 	|	|
 	|	|	|- app.css 				# Our compressed CSS file
 	|	|	|- app.css.map 			# Our sourcemap file
+	|	|	|- login.css 			# Login page styles
 	|
 	|	|- js/
 	|	|
@@ -84,6 +88,7 @@ assets/
 	|	|- _shame.scss 			 # Temporary work arounds
 	|	|– app.scss              # Primary Sass file
 	| |
+	| |- login.scss				# Styles for the WordPress login page
 	| |
 node_modules/					# Foundation for sites + gulp plugins
 	| |

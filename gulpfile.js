@@ -48,7 +48,7 @@ gulp.task('styles', function() {
 
 
 // Our 'scripts' task, which handles our javascript elements
-gulp.task('js', function() {
+gulp.task('js', ['foundation-js'], function() {
 	return gulp.src('assets/js/**/*.js')
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('./assets/dist/js'))
@@ -63,23 +63,59 @@ gulp.task('js', function() {
 		.pipe(notify({ message: "Scripts task complete!"}));
 });
 
+// Foundation JS task, which gives us flexibility to choose what plugins we want
+gulp.task('foundation-js', function() {
+	return gulp.src([
 
-// Our 'jsHint' task, which checks for JS errors
-gulp.task('jsHint', function() {
-	return gulp.src('./assets/js/**/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
-		.pipe( notify( { message: "jsHint task complete", onLast: true } ) );
-} );
+		/* Choose what JS Plugin you'd like to use. Note that some plugins also
+		require specific utility libraries that ship with Foundation—refer to a
+		plugin's documentation to find out which plugins require what, and see
+		the Foundation's JavaScript page for more information.
+		http://foundation.zurb.com/sites/docs/javascript.html */
 
+		// Core Foundation - needed when choosing plugins ala carte
+		'node_modules/foundation-sites/js/foundation.core.js',
+
+		// Choose the individual plugins you want in your project
+		'node_modules/foundation-sites/js/foundation.abide.js',
+		'node_modules/foundation-sites/js/foundation.accordion.js',
+		'node_modules/foundation-sites/js/foundation.accordionMenu.js',
+		'node_modules/foundation-sites/js/foundation.drilldown.js',
+		'node_modules/foundation-sites/js/foundation.dropdown.js',
+		'node_modules/foundation-sites/js/foundation.dropdownMenu.js',
+		'node_modules/foundation-sites/js/foundation.equalizer.js',
+		'node_modules/foundation-sites/js/foundation.interchange.js',
+		'node_modules/foundation-sites/js/foundation.magellan.js',
+		'node_modules/foundation-sites/js/foundation.offcanvas.js',
+		'node_modules/foundation-sites/js/foundation.orbit.js',
+		'node_modules/foundation-sites/js/foundation.responsiveMenu.js',
+		'node_modules/foundation-sites/js/foundation.responsiveToggle.js',
+		'node_modules/foundation-sites/js/foundation.reveal.js',
+		'node_modules/foundation-sites/js/foundation.slider.js',
+		'node_modules/foundation-sites/js/foundation.sticky.js',
+		'node_modules/foundation-sites/js/foundation.tabs.js',
+		'node_modules/foundation-sites/js/foundation.toggler.js',
+		'node_modules/foundation-sites/js/foundation.util.box.js',
+		'node_modules/foundation-sites/js/foundation.util.keyboard.js',
+		'node_modules/foundation-sites/js/foundation.util.mediaQuery.js',
+		'node_modules/foundation-sites/js/foundation.util.motion.js',
+		'node_modules/foundation-sites/js/foundation.util.nest.js',
+		'node_modules/foundation-sites/js/foundation.util.timerAndImageLoader.js',
+		'node_modules/foundation-sites/js/foundation.util.touch.js',
+		'node_modules/foundation-sites/js/foundation.util.triggers.js',
+
+	])
+	.pipe(concat('foundation.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('./assets/dist/js'));
+});
 
 // Watch our files and fire off a task when something changes
 gulp.task('watch', function() {
 	gulp.watch('assets/sass/**/*.scss', ['styles']);
-	gulp.watch('assets/js/**/*.js', ['jsHint']);
 	gulp.watch('assets/js/**/*.js', ['js']);
 });
 
 
 // Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
-gulp.task('default', ['styles', 'js', 'jsHint', 'browser-sync', 'watch']);
+gulp.task('default', ['styles', 'js', 'browser-sync', 'watch']);

@@ -169,14 +169,42 @@ function heisenberg_nav_menu( $menu ){
 }
 
 
-/**
- * Make oembed elements responsive. Add Foundation's .flex-video class wrapper
- * around any oembeds
- */
+/*******************************************************************************
+* Make oembed elements responsive. Add Foundation's .flex-video class wrapper
+* around any oembeds
+*******************************************************************************/
 
 add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 ) ;
 
 function heisenberg_oembed_flex_wrapper( $html, $url, $attr, $post_ID ) {
 	$return = '<div class="flex-video">'.$html.'</div>';
 	return $return;
+}
+
+/*******************************************************************************
+* Custom login styles for the theme. Sass file is located in ./assets/login.scss
+* and is spit out to ./assets/dist/css/login.css by gulp. Functions are here so
+* that you can move it wherever works best for your project.
+*******************************************************************************/
+
+// Load the CSS
+add_action( 'login_enqueue_scripts', 'heisenberg_login_css' );
+
+function heisenberg_login_css() {
+	wp_enqueue_style( 'heisenberg_login_css', get_template_directory_uri() .
+	'/assets/dist/css/login.css', false );
+}
+
+// Change header link to our site instead of wordpress.org
+add_filter( 'login_headerurl', 'heisenberg_remove_logo_link' );
+
+function heisenberg_remove_logo_link() {
+	return get_bloginfo( 'url' );
+}
+
+// Change logo title in from WordPress to our site name
+add_filter( 'login_headertitle', 'heisenberg_change_login_logo_title' );
+
+function heisenberg_change_login_logo_title() {
+	return get_bloginfo( 'name' );
 }

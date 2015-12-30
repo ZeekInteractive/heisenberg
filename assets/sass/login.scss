@@ -1,0 +1,53 @@
+/*******************************************************************************
+This is the Sass file that allows you to build a custom login-styled page that
+matches your brand/site colors. These are some starter styles, so feel free to
+add/remove whatever suits your project needs. Errors? Pull requests are welcome!
+https://github.com/ZeekInteractive/heisenberg/issues
+*******************************************************************************/
+
+// Page background color/image
+body.login {
+	background: #2199e8;
+}
+
+// Your logo goes here
+//.login h1 a {
+	// background-image: url(../../img/logo.png);
+	// background-size: contain;
+	// height: ;
+	// width: ;
+//}
+
+// Login button styling
+#wp-submit {
+	background: #2199e8;
+	border: none;
+	text-transform: uppercase;
+	box-shadow: none;
+	border-radius: 0;
+	transition: 3ms;
+
+  &:hover {
+    background: darken(#2199e8, 10%);
+    border: none;
+    box-shadow: none;
+  }
+}
+
+// Text styling for 'lost your password'
+.login #nav a {
+	color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+// Text styling for 'back to heisenberg'
+.login #backtoblog a {
+	color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}

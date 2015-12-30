@@ -117,10 +117,10 @@ endif;
  */
 function heisenberg_scripts() {
 
-	// Add core Foundation js to footer
-	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/node_modules/foundation-sites/dist/foundation.js', array( 'jquery' ), '6.0.3', true );
+	// Add Foundation JS to footer
+	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/dist/js/foundation.js', array( 'jquery' ), '6.1.1', true );
 
-	// Add our concatenated js file
+	// Add our concatenated JS file after Foundation
 	if ( WP_DEBUG ) {
 
 		// Enqueue our full version if in development mode

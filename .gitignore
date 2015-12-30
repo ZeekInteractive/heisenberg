@@ -1,6 +1,4 @@
 .sass-cache
-assets/components
 node_modules
-!node_modules/foundation-sites/
 npm-debug.log
 .DS_Store

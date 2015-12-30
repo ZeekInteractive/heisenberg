@@ -64,22 +64,13 @@ gulp.task('js', function() {
 });
 
 
-// Our 'jsHint' task, which checks for JS errors
-gulp.task('jsHint', function() {
-	return gulp.src('./assets/js/**/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
-		.pipe( notify( { message: "jsHint task complete", onLast: true } ) );
-} );
 
 
 // Watch our files and fire off a task when something changes
 gulp.task('watch', function() {
 	gulp.watch('assets/sass/**/*.scss', ['styles']);
-	gulp.watch('assets/js/**/*.js', ['jsHint']);
 	gulp.watch('assets/js/**/*.js', ['js']);
 });
 
 
 // Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
-gulp.task('default', ['styles', 'js', 'jsHint', 'browser-sync', 'watch']);

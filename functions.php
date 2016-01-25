@@ -132,16 +132,10 @@ endif;
  */
 function heisenberg_scripts() {
 
-	// Add modernizer.js for shimming HTML5 elements that older browsers may not detect and for mobile detection
-	wp_enqueue_script ( 'modernizr', get_template_directory_uri() . '/assets/components/modernizr/modernizr.js', '', '', false );
+	// Add Foundation JS to footer
+	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/dist/js/foundation.js', array( 'jquery' ), '6.1.1', true );
 
-	// Add fastclick.js file to footer (for help with devices with touch UIs)
-	wp_enqueue_script ( 'fastclick_js', get_template_directory_uri() . '/assets/components/fastclick/lib/fastclick.js', '', '', true );
-
-	// Add core Foundation js to footer
-	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/assets/components/foundation/js/foundation.min.js', array( 'jquery' ), '5', true );
-
-	// Add our concatenated js file
+	// Add our concatenated JS file after Foundation
 	if ( WP_DEBUG ) {
 
 		// Enqueue our full version if in development mode
@@ -153,20 +147,12 @@ function heisenberg_scripts() {
 		wp_enqueue_script( 'heisenberg_appjs', get_template_directory_uri() . '/assets/dist/js/app.min.js', array( 'jquery' ), '', true );
 	}
 
-	wp_enqueue_script( 'heisenberg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'heisenberg-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'heisenberg_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

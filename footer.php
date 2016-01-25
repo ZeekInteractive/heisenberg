@@ -10,35 +10,22 @@
  */
 ?>
 
-	</div><!-- #content -->
+			</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+			<footer id="colophon" class="site-footer" role="contentinfo">
 
-		<div class="row"><!-- .row start -->
+				<div class="column row"><!-- .column.row start -->
 
-			<div class="small-12 columns"><!-- .columns start -->
+					<p class="text-center">This is the footer</p>
 
-				<div class="site-info">
-					<p>This is the footer</p>
-				</div><!-- .site-info -->
+				</div><!-- .column.row end -->
 
-			</div><!-- .columns end -->
+			</footer><!-- #colophon -->
 
-		</div><!-- .row end -->
-
-	</footer><!-- #colophon -->
-
-</div><!-- #page -->
+		</div> <!-- .off-canvas-content -->
+	</div><!-- .off-canvas-wrapper-inner -->
+</div><!-- .off-canvas-wrapper -->
 
 <?php wp_footer(); ?>
-
-
-		<!-- close the off-canvas menu -->
-		<a class="exit-off-canvas"></a>
-
-	</div><!-- .inner-wrap -->
-</div><!-- .off-canvas-wrap -->
-
-
 </body>
 </html>

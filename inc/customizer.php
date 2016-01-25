@@ -1,6 +1,6 @@
 <?php
 /**
- * Heisenberg Theme Customizer
+ * Heisenberg Theme Customizer.
  *
  * @package Heisenberg
  */

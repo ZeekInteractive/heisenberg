@@ -2,7 +2,9 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Heisenberg
  */
@@ -46,7 +48,7 @@
 			<header id="masthead" class="" role="banner">
 				<section class="row column">
 					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
 							<?php bloginfo( 'name' ); ?>
 						</a>
 					</h1>

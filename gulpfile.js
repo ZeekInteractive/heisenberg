@@ -40,7 +40,8 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('./assets/dist/css')) // Location of our app.css file
 		.pipe(browserSync.stream({match: '**/*.css'}))
 		.pipe(notify({
-			message: "Styles task complete!"
+			message: "✔︎ Styles task complete",
+			onLast: true
 		}));
 });
 
@@ -58,7 +59,7 @@ gulp.task('js', ['foundation-js'], function() {
 		)
 		.pipe(gulp.dest('./assets/dist/js'))
 		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({ message: "Scripts task complete!"}));
+		.pipe(notify({ message: "✔︎ Scripts task complete!"}));
 });
 
 // Foundation JS task, which gives us flexibility to choose what plugins we want

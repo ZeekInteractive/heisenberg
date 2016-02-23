@@ -1,1 +1,33 @@
+////////////////////////////////////////////////////////////////////////////////
+// Color palette function
+////////////////////////////////////////////////////////////////////////////////
+
+$colors: (
+ 'red': (
+   base: #f00,
+   light: #de4b39
+ ),
+ 'grey': (
+   dark: #333,
+   base: #999,
+   light: #ececec
+ ),
+ 'black': (
+   base: #000,
+   trans: transparentize(#000, .3)
+ ),
+ 'white': (
+   base: #fff,
+   trans: transparentize(#fff, .5)
+ )
+);
+
+@function color($color-name, $tone: base) {
+    @return map-get(map-get($colors, $color-name), $tone);
+}
+
+//usage
+// a {
+//   color: color('grey', 'dark');
+// }
 

@@ -3,7 +3,6 @@ var	gulp			= require('gulp'),
 	sass			= require('gulp-sass'),  // Our sass compiler
 	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
 	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
-	rename			= require('gulp-rename'), // Allows us to rename our JS file prior to minifying
 	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
 	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
 	concat			= require('gulp-concat'), // Concat our js
@@ -35,7 +34,7 @@ gulp.task('styles', function() {
 		)
 		.pipe(autoprefixer({
 			browsers: ['last 2 versions', 'ie >= 9']
-		})) 
+		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./assets/dist/css')) // Location of our app.css file
 		.pipe(browserSync.stream({match: '**/*.css'}))
@@ -51,11 +50,9 @@ gulp.task('js', ['foundation-js'], function() {
 	return gulp.src('assets/js/**/*.js')
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest('./assets/dist/js'))
-		.pipe(rename({suffix: '.min'}))
-		.pipe(uglify()
-		.on('error', notify.onError(function(error) {
+		.pipe(uglify().on('error', notify.onError(function(error) {
 			return "Error: " + error.message;
-		}))
+			}))
 		)
 		.pipe(gulp.dest('./assets/dist/js'))
 		.pipe(browserSync.reload({stream:true}))

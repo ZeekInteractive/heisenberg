@@ -189,16 +189,17 @@ function heisenberg_nav_menu( $menu ){
 
 
 /*******************************************************************************
-* Make oembed elements responsive. Add Foundation's .flex-video class wrapper
-* around any oembeds
+* Make YouTube and Vimeo oembed elements responsive. Add Foundation's .flex-video 
+* class wrapper around any oembeds
 *******************************************************************************/
 
-add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 ) ;
-
 function heisenberg_oembed_flex_wrapper( $html, $url, $attr, $post_ID ) {
-	$return = '<div class="flex-video">'.$html.'</div>';
-	return $return;
+	if ( strpos($url, 'youtube') || strpos($url, 'youtu.be') || strpos($url, 'vimeo') ) {
+		return '<div class="flex-video widescreen">' . $html . '</div>';
+	}
+	return $html;
 }
+add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 );
 
 /*******************************************************************************
 * Custom login styles for the theme. Sass file is located in ./assets/login.scss

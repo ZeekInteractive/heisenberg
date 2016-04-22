@@ -22,11 +22,11 @@ body.login {
 #wp-submit {
 	background: #2199e8;
 	border: none;
-	text-transform: uppercase;
-	box-shadow: none;
 	border-radius: 0;
-	text-shadow: 0;
-	transition: 3ms;
+	box-shadow: none;
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: all 300ms ease-in-out;
 
   &:hover {
     background: darken(#2199e8, 10%);

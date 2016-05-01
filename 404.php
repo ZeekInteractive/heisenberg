@@ -9,9 +9,9 @@
 
 get_header(); ?>
 
-<div class="row"><!-- .row start -->
+<div class="row">
 
-	<div class="medium-8 small-12 columns"><!-- .columns start -->
+	<div class="medium-8 columns"><!-- .columns start -->
 
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
@@ -59,14 +59,14 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-	</div><!-- .columns end -->
+	</div><!-- .columns -->
 
-	<div class="medium-4 small-12 columns"><!-- .columns start -->
+	<div class="medium-4 columns">
 
 		<?php get_sidebar(); ?>
 
-	</div><!-- .columns end -->
+	</div><!-- .columns -->
 
-</div><!-- .row end -->
+</div><!-- .row -->
 
 <?php get_footer(); ?>

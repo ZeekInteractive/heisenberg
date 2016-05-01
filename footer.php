@@ -14,11 +14,11 @@
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
 
-				<div class="column row"><!-- .column.row start -->
+				<div class="column row">
 
 					<p class="text-center">This is the footer</p>
 
-				</div><!-- .column.row end -->
+				</div><!-- .column.row -->
 
 			</footer><!-- #colophon -->
 

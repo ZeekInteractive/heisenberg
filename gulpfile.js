@@ -33,7 +33,8 @@ gulp.task('styles', function() {
 		}))
 		)
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions', 'ie >= 9']
+			browsers: ['last 2 versions'],
+			cascade: false
 		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./assets/dist/css')) // Location of our app.css file

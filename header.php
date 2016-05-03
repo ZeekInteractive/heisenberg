@@ -21,6 +21,9 @@
 
 <body <?php body_class(); ?>>
 
+<?php echo file_get_contents( get_template_directory() . '/assets/dist/sprite/sprite.svg' ); ?>
+
+
 <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
     <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas data-position="left">

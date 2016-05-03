@@ -16,7 +16,11 @@
 
 				<div class="column row">
 
-					<p class="text-center">This is the footer</p>
+					<p class="text-center">
+						<svg class="specific-icon icon">
+							<use xlink:href="#fi-graph-pie"></use>
+						</svg>
+						This is the footer</p>
 
 				</div><!-- .column.row -->
 

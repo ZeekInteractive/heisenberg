@@ -1,0 +1,13 @@
+// Baseline SVG styles
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+// Get specific here
+.specific-icon {
+  font-size: 24px;
+  color: hsl(40, 50%, 50%);
+}

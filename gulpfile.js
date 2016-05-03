@@ -4,6 +4,7 @@ var	gulp			= require('gulp'),
 	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
 	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
 	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
+	size					= require('gulp-size'),
 	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
 	concat			= require('gulp-concat'), // Concat our js
 	uglify			= require('gulp-uglify'); // Minify our js
@@ -38,6 +39,7 @@ gulp.task('styles', function() {
 		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./assets/dist/css')) // Location of our app.css file
+		.pipe(size({showFiles: true}))
 		.pipe(browserSync.stream({match: '**/*.css'}))
 		.pipe(notify({
 			message: "✔︎ Styles task complete",

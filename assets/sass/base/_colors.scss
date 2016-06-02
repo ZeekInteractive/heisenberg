@@ -19,6 +19,13 @@ $colors: (
  'white': (
    base: #fff,
    trans: transparentize(#fff, .5)
+ ),
+ 'social': (
+   facebook: #3c5a9a,
+   twitter: #55acee,
+   google: #de4b39,
+   reddit: #cee3f8,
+   linkedin: #007bb5
  )
 );
 

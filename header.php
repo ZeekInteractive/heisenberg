@@ -26,7 +26,7 @@
 
 <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-    <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+    <div class="title-bar show-for-small-only">
       <div class="title-bar-left">
         <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
         <span class="title-bar-title"><?php bloginfo( 'name' ); ?></span>

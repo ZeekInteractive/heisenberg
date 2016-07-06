@@ -104,10 +104,10 @@ function heisenberg_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'heisenberg' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'heisenberg_widgets_init' );
@@ -140,7 +140,7 @@ function heisenberg_scripts() {
 	// Add Foundation JS to footer
 	wp_enqueue_script( 'foundation-js',
 		get_template_directory_uri() . '/assets/dist/js/foundation.js',
-		array( 'jquery' ), '6.1.1', true
+		array( 'jquery' ), '6.2.3', true
 	);
 
 	// Add our concatenated JS file after Foundation
@@ -180,26 +180,19 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 
-add_filter( 'wp_nav_menu', 'heisenberg_nav_menu', 10, 2 );
-
-function heisenberg_nav_menu( $menu ){
-	$menu = str_replace('current-menu-item', 'current-menu-item active', $menu);
-	return $menu;
-}
-
-
 /*******************************************************************************
-* Make YouTube and Vimeo oembed elements responsive. Add Foundation's .flex-video 
+* Make YouTube and Vimeo oembed elements responsive. Add Foundation's .flex-video
 * class wrapper around any oembeds
 *******************************************************************************/
 
+add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 );
 function heisenberg_oembed_flex_wrapper( $html, $url, $attr, $post_ID ) {
 	if ( strpos($url, 'youtube') || strpos($url, 'youtu.be') || strpos($url, 'vimeo') ) {
 		return '<div class="flex-video widescreen">' . $html . '</div>';
 	}
 	return $html;
 }
-add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 );
+
 
 /*******************************************************************************
 * Custom login styles for the theme. Sass file is located in ./assets/login.scss
@@ -209,7 +202,6 @@ add_filter( 'embed_oembed_html', 'heisenberg_oembed_flex_wrapper', 10, 4 );
 
 // Load the CSS
 add_action( 'login_enqueue_scripts', 'heisenberg_login_css' );
-
 function heisenberg_login_css() {
 	wp_enqueue_style( 'heisenberg_login_css', get_template_directory_uri() .
 	'/assets/dist/css/login.css', false );
@@ -217,14 +209,12 @@ function heisenberg_login_css() {
 
 // Change header link to our site instead of wordpress.org
 add_filter( 'login_headerurl', 'heisenberg_remove_logo_link' );
-
 function heisenberg_remove_logo_link() {
 	return get_bloginfo( 'url' );
 }
 
 // Change logo title in from WordPress to our site name
 add_filter( 'login_headertitle', 'heisenberg_change_login_logo_title' );
-
 function heisenberg_change_login_logo_title() {
 	return get_bloginfo( 'name' );
 }

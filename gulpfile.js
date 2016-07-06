@@ -8,7 +8,8 @@ var	gulp			= require('gulp'),
 	size					= require('gulp-size'),
 	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
 	concat			= require('gulp-concat'), // Concat our js
-	uglify			= require('gulp-uglify'); // Minify our js
+	uglify			= require('gulp-uglify'),
+	babel				= require('gulp-babel'),
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -132,6 +133,7 @@ gulp.task('foundation-js', function() {
 
 		// Core Foundation - needed when choosing plugins ala carte
 		paths.foundationJSpath + 'foundation.core.js',
+		paths.foundationJSpath + 'foundation.util.mediaQuery.js',
 
 		// Choose the individual plugins you want in your project
 		paths.foundationJSpath + 'foundation.abide.js',
@@ -155,7 +157,6 @@ gulp.task('foundation-js', function() {
 		paths.foundationJSpath + 'foundation.tooltip.js',
 		paths.foundationJSpath + 'foundation.util.box.js',
 		paths.foundationJSpath + 'foundation.util.keyboard.js',
-		paths.foundationJSpath + 'foundation.util.mediaQuery.js',
 		paths.foundationJSpath + 'foundation.util.motion.js',
 		paths.foundationJSpath + 'foundation.util.nest.js',
 		paths.foundationJSpath + 'foundation.util.timerAndImageLoader.js',
@@ -163,6 +164,10 @@ gulp.task('foundation-js', function() {
 		paths.foundationJSpath + 'foundation.util.triggers.js',
 
 	])
+	.pipe(babel({
+		presets: ['es2015'],
+		compact: true
+	}))
 	.pipe(concat('foundation.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest(paths.destPath + 'js'));

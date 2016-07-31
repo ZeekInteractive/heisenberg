@@ -4,14 +4,14 @@ var	gulp			= require('gulp'),
 	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
 	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
 	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
-	svgSprite				= require('gulp-svg-sprite'),
-	svgmin 				= require('gulp-svgmin'),
-	size					= require('gulp-size'),
+	svgSprite		= require('gulp-svg-sprite'),
+	svgmin 			= require('gulp-svgmin'),
+	size			= require('gulp-size'),
 	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
 	concat			= require('gulp-concat'), // Concat our js
 	uglify			= require('gulp-uglify'),
-	babel				= require('gulp-babel'),
-	del					= require('del');
+	babel			= require('gulp-babel'),
+	del			= require('del');
 
 
 ////////////////////////////////////////////////////////////////////////////////

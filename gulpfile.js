@@ -21,7 +21,7 @@ var	gulp			= require('gulp'),
 var paths = {
 	sassPath: 'assets/sass/',
 	nodePath: 'node_modules/',
-	jsPath: 'assets/js/',
+	jsPath: 'assets/js/concat',
 	destPath: 'assets/dist/',
 	foundationJSpath: 'node_modules/foundation-sites/js/',
 	imgPath: 'assets/img/'

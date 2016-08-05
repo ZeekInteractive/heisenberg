@@ -46,7 +46,7 @@ assets/
 	|	|
 	|	|	|- app.js 				# Our non-minified development JavaScript file
 	|	|	|- app.min.js 			# Our minified production JavaScript file
-	|	|	|- customer.js
+	|	|	|- customizer.js
 	|
 	|- img/						# Images
 	|

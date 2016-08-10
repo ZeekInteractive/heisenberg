@@ -212,4 +212,5 @@ gulp.task('watch', function() {
 
 
 // Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
-gulp.task('default', ['svg-sprite', 'styles', 'js', 'browser-sync', 'foundation-js', 'watch']);
+gulp.task('default', ['styles', 'js', 'svg-sprite']);
+gulp.task('serve', ['svg-sprite', 'styles', 'js', 'browser-sync', 'foundation-js', 'watch']);

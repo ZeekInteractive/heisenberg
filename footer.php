@@ -20,7 +20,7 @@
 						<svg class="icon">
 							<use xlink:href="#icon-coffee-cup"></use>
 						</svg>
-						Thanks for using Heisneberg!
+						Thanks for using Heisenberg!
 					</p>
 
 				</div><!-- .column.row -->

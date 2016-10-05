@@ -4,11 +4,14 @@ var	gulp			= require('gulp'),
 	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
 	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
 	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
-	svgSprite				= require('gulp-svg-sprite'),
-	size					= require('gulp-size'),
+	svgSprite		= require('gulp-svg-sprite'),
+	svgmin 			= require('gulp-svgmin'),
+	size			= require('gulp-size'),
 	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
 	concat			= require('gulp-concat'), // Concat our js
-	uglify			= require('gulp-uglify'); // Minify our js
+	uglify			= require('gulp-uglify'),
+	babel			= require('gulp-babel'),
+	del			= require('del');
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -18,16 +21,26 @@ var	gulp			= require('gulp'),
 var paths = {
 	sassPath: 'assets/sass/',
 	nodePath: 'node_modules/',
-	jsPath: 'assets/js/',
+	jsPath: 'assets/js/concat',
 	destPath: 'assets/dist/',
 	foundationJSpath: 'node_modules/foundation-sites/js/',
 	imgPath: 'assets/img/'
 };
 
+var bsProxy = 'heisenberg.dev';
+
 
 ////////////////////////////////////////////////////////////////////////////////
-// Sprite Task
+// SVG Sprite Task
 ////////////////////////////////////////////////////////////////////////////////
+
+// Delete compiled SVGs before creating a new one
+gulp.task('clean:svgs', function () {
+  return del([
+		paths.destPath + 'svg/**/*',
+		paths.destPath + 'sprite/sprite.svg',
+	]);
+});
 
 var svgConfig = {
   mode: {
@@ -48,10 +61,24 @@ var svgConfig = {
   }
 };
 
-gulp.task('sprite-page', function() {
+gulp.task('svg-min', ['clean:svgs'], function() {
   return gulp.src(paths.imgPath + 'svg/**/*.svg')
+		.pipe(svgmin())
+		.pipe(gulp.dest(paths.destPath + 'svg'))
+		.pipe(notify({
+			message: "SVG Minify task complete",
+			onLast: true
+		}));
+});
+
+gulp.task('svg-sprite', ['svg-min'], function() {
+  return gulp.src([
+		paths.imgPath + 'svg/*.svg'
+	])
     .pipe(svgSprite(svgConfig))
-    .pipe(gulp.dest(paths.destPath));
+    .pipe(gulp.dest(paths.destPath))
+		.pipe(browserSync.reload({stream:true}))
+		.pipe(notify({ message: "SVG Sprite task complete"}));
 });
 
 
@@ -65,7 +92,7 @@ gulp.task('browser-sync', function() {
 	];
 
 	browserSync.init(files, {
-		proxy: 'heisenberg.dev/'
+		proxy: bsProxy
 	});
 });
 
@@ -103,7 +130,7 @@ gulp.task('styles', function() {
 // JS
 ////////////////////////////////////////////////////////////////////////////////
 
-gulp.task('js', ['foundation-js'], function() {
+gulp.task('js', function() {
 	return gulp.src(paths.jsPath + '**/*.js')
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest(paths.destPath + 'js'))
@@ -131,37 +158,42 @@ gulp.task('foundation-js', function() {
 		http://foundation.zurb.com/sites/docs/javascript.html */
 
 		// Core Foundation - needed when choosing plugins ala carte
-		'node_modules/foundation-sites/js/foundation.core.js',
+		paths.foundationJSpath + 'foundation.core.js',
+		paths.foundationJSpath + 'foundation.util.mediaQuery.js',
 
 		// Choose the individual plugins you want in your project
-		'node_modules/foundation-sites/js/foundation.abide.js',
-		'node_modules/foundation-sites/js/foundation.accordion.js',
-		'node_modules/foundation-sites/js/foundation.accordionMenu.js',
-		'node_modules/foundation-sites/js/foundation.drilldown.js',
-		'node_modules/foundation-sites/js/foundation.dropdown.js',
-		'node_modules/foundation-sites/js/foundation.dropdownMenu.js',
-		'node_modules/foundation-sites/js/foundation.equalizer.js',
-		'node_modules/foundation-sites/js/foundation.interchange.js',
-		'node_modules/foundation-sites/js/foundation.magellan.js',
-		'node_modules/foundation-sites/js/foundation.offcanvas.js',
-		'node_modules/foundation-sites/js/foundation.orbit.js',
-		'node_modules/foundation-sites/js/foundation.responsiveMenu.js',
-		'node_modules/foundation-sites/js/foundation.responsiveToggle.js',
-		'node_modules/foundation-sites/js/foundation.reveal.js',
-		'node_modules/foundation-sites/js/foundation.slider.js',
-		'node_modules/foundation-sites/js/foundation.sticky.js',
-		'node_modules/foundation-sites/js/foundation.tabs.js',
-		'node_modules/foundation-sites/js/foundation.toggler.js',
-		'node_modules/foundation-sites/js/foundation.util.box.js',
-		'node_modules/foundation-sites/js/foundation.util.keyboard.js',
-		'node_modules/foundation-sites/js/foundation.util.mediaQuery.js',
-		'node_modules/foundation-sites/js/foundation.util.motion.js',
-		'node_modules/foundation-sites/js/foundation.util.nest.js',
-		'node_modules/foundation-sites/js/foundation.util.timerAndImageLoader.js',
-		'node_modules/foundation-sites/js/foundation.util.touch.js',
-		'node_modules/foundation-sites/js/foundation.util.triggers.js',
+		paths.foundationJSpath + 'foundation.abide.js',
+		paths.foundationJSpath + 'foundation.accordion.js',
+		paths.foundationJSpath + 'foundation.accordionMenu.js',
+		paths.foundationJSpath + 'foundation.drilldown.js',
+		paths.foundationJSpath + 'foundation.dropdown.js',
+		paths.foundationJSpath + 'foundation.dropdownMenu.js',
+		paths.foundationJSpath + 'foundation.equalizer.js',
+		paths.foundationJSpath + 'foundation.interchange.js',
+		paths.foundationJSpath + 'foundation.magellan.js',
+		paths.foundationJSpath + 'foundation.offcanvas.js',
+		paths.foundationJSpath + 'foundation.orbit.js',
+		paths.foundationJSpath + 'foundation.responsiveMenu.js',
+		paths.foundationJSpath + 'foundation.responsiveToggle.js',
+		paths.foundationJSpath + 'foundation.reveal.js',
+		paths.foundationJSpath + 'foundation.slider.js',
+		paths.foundationJSpath + 'foundation.sticky.js',
+		paths.foundationJSpath + 'foundation.tabs.js',
+		paths.foundationJSpath + 'foundation.toggler.js',
+		paths.foundationJSpath + 'foundation.tooltip.js',
+		paths.foundationJSpath + 'foundation.util.box.js',
+		paths.foundationJSpath + 'foundation.util.keyboard.js',
+		paths.foundationJSpath + 'foundation.util.motion.js',
+		paths.foundationJSpath + 'foundation.util.nest.js',
+		paths.foundationJSpath + 'foundation.util.timerAndImageLoader.js',
+		paths.foundationJSpath + 'foundation.util.touch.js',
+		paths.foundationJSpath + 'foundation.util.triggers.js',
 
 	])
+	.pipe(babel({
+		presets: ['es2015'],
+		compact: true
+	}))
 	.pipe(concat('foundation.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest(paths.destPath + 'js'));
@@ -175,10 +207,10 @@ gulp.task('foundation-js', function() {
 gulp.task('watch', function() {
 	gulp.watch(paths.sassPath + '**/*.scss', ['styles']);
 	gulp.watch(paths.jsPath + '**/*.js', ['js']);
-	gulp.watch(paths.imgPath + 'svg/**/*.svg', ['sprite-page']);
-
+	gulp.watch(paths.imgPath + 'svg/**/*.svg', ['svg-sprite']);
 });
 
 
 // Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
-gulp.task('default', ['styles', 'js', 'browser-sync', 'sprite-page', 'watch']);
+gulp.task('default', ['styles', 'js', 'svg-sprite']);
+gulp.task('serve', ['svg-sprite', 'styles', 'js', 'browser-sync', 'foundation-js', 'watch']);

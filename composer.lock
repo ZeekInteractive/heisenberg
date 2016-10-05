@@ -1,0 +1,53 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "afec8d7dad4b547649bbaf3508258aaa",
+    "content-hash": "5e0c758af57c934dd9242e4664d40fc8",
+    "packages": [
+        {
+            "name": "aaronholbrook/autoload",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AaronHolbrook/autoload.git",
+                "reference": "373d4f32c9524d2aa6b111e61a0abd3e23e64ba5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AaronHolbrook/autoload/zipball/373d4f32c9524d2aa6b111e61a0abd3e23e64ba5",
+                "reference": "373d4f32c9524d2aa6b111e61a0abd3e23e64ba5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Holbrook",
+                    "email": "aaron@holbrook.io",
+                    "homepage": "http://aaronjholbrook.com"
+                }
+            ],
+            "description": "Automatically and recursively require_once all files in a directory.",
+            "time": "2015-06-04 19:49:15"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

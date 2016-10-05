@@ -1,0 +1,38 @@
+[
+    {
+        "name": "aaronholbrook/autoload",
+        "version": "1.2",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/AaronHolbrook/autoload.git",
+            "reference": "373d4f32c9524d2aa6b111e61a0abd3e23e64ba5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/AaronHolbrook/autoload/zipball/373d4f32c9524d2aa6b111e61a0abd3e23e64ba5",
+            "reference": "373d4f32c9524d2aa6b111e61a0abd3e23e64ba5",
+            "shasum": ""
+        },
+        "time": "2015-06-04 19:49:15",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "autoload.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aaron Holbrook",
+                "email": "aaron@holbrook.io",
+                "homepage": "http://aaronjholbrook.com"
+            }
+        ],
+        "description": "Automatically and recursively require_once all files in a directory."
+    }
+]

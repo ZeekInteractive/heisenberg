@@ -17,10 +17,11 @@
 				<div class="column row">
 
 					<p class="text-center">
-						<svg class="specific-icon icon">
-							<use xlink:href="#fi-graph-pie"></use>
+						<svg class="icon">
+							<use xlink:href="#icon-coffee-cup"></use>
 						</svg>
-						This is the footer</p>
+						Thanks for using Heisenberg!
+					</p>
 
 				</div><!-- .column.row -->
 

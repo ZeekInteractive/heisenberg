@@ -25,3 +25,20 @@
 		margin-top: rem-calc(8);
 	}
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// Photo alignments and captions - Foundation doesn't have a variable to help 
+// us overwrite. WordPress wraps post images w/captions and alignments with a 
+// <figure> tag; these styles help keep things responsive and aligned with a 
+// post.
+////////////////////////////////////////////////////////////////////////////////
+
+figure {
+  max-width: 100%;
+  margin-bottom: 3.125em;
+  margin-left: 0;
+
+  @include smaller-than(medium) {
+    margin: 0 0 3.125em 0;
+  }
+}

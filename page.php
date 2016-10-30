@@ -19,32 +19,34 @@ get_header(); ?>
 	<div class="medium-8 columns">
 
 		<div id="primary" class="content-area">
+
 			<main id="main" class="site-main" role="main">
+				<?php
+				while ( have_posts() ) :
 
-				<?php while ( have_posts() ) : the_post(); ?>
+					the_post();
 
-					<?php get_template_part( 'template-parts/content', 'page' ); ?>
+					get_template_part( 'template-parts/content', 'page' );
 
-					<?php
-						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) :
 							comments_template();
 						endif;
-					?>
 
-				<?php endwhile; // End of the loop. ?>
+				endwhile; ?>
 
-			</main><!-- #main -->
-		</div><!-- #primary -->
+			</main>
 
-	</div><!-- .columns -->
+		</div>
+
+	</div>
 
 	<div class="medium-4 columns">
 
 		<?php get_sidebar(); ?>
 
-	</div><!-- .columns -->
+	</div>
 
-</div><!-- .row -->
+</div>
 
-<?php get_footer(); ?>
+<?php
+get_footer();

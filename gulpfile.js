@@ -1,17 +1,17 @@
 // Load our plugins
-var	gulp			= require('gulp'),
-	sass			= require('gulp-sass'),  // Our sass compiler
-	notify			= require('gulp-notify'), // Basic gulp notificatin using OS
-	sourcemaps		= require('gulp-sourcemaps'), // Sass sourcemaps
-	autoprefixer		= require('gulp-autoprefixer'), // Adds vendor prefixes for us
-	svgSprite		= require('gulp-svg-sprite'),
-	svgmin 			= require('gulp-svgmin'),
-	size			= require('gulp-size'),
-	browserSync		= require('browser-sync'), // Sends php, js, and css updates to browser for us
-	concat			= require('gulp-concat'), // Concat our js
-	uglify			= require('gulp-uglify'),
-	babel			= require('gulp-babel'),
-	del			= require('del');
+var gulp = require( 'gulp' ),
+	sass = require( 'gulp-sass' ),  // Our sass compiler
+	notify = require( 'gulp-notify' ), // Basic gulp notification using OS
+	sourcemaps = require( 'gulp-sourcemaps' ), // Sass sourcemaps
+	autoprefixer = require( 'gulp-autoprefixer' ), // Adds vendor prefixes for us
+	svgSprite = require( 'gulp-svg-sprite' ),
+	svgmin = require( 'gulp-svgmin' ),
+	size = require( 'gulp-size' ),
+	browserSync = require( 'browser-sync' ), // Sends php, js, and css updates to browser for us
+	concat = require( 'gulp-concat' ), // Concat our js
+	uglify = require( 'gulp-uglify' ),
+	babel = require( 'gulp-babel' ),
+	del = require( 'del' );
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -43,26 +43,26 @@ gulp.task('clean:svgs', function () {
 });
 
 var svgConfig = {
-  mode: {
-    symbol: { // symbol mode to build the SVG
-      dest: 'sprite', // destination foldeer
-      sprite: 'sprite.svg', //sprite name
-      example: true // Build sample page
-    }
-  },
-  svg: {
-    xmlDeclaration: false, // strip out the XML attribute
-    doctypeDeclaration: false, // don't include the !DOCTYPE declaration
+	mode: {
+		symbol: { // symbol mode to build the SVG
+			dest: 'sprite', // destination folder
+			sprite: 'sprite.svg', //sprite name
+			example: false // Build sample page
+		}
+	},
+	svg: {
+		xmlDeclaration: false, // strip out the XML attribute
+		doctypeDeclaration: false, // don't include the !DOCTYPE declaration
 		rootAttributes: { // add some attributes to the <svg> tag
-      width: 0,
-      height: 0,
-      style: 'position: absolute;',
-     }
-  }
+			width: 0,
+			height: 0,
+			style: 'position: absolute;'
+		}
+	}
 };
 
 gulp.task('svg-min', ['clean:svgs'], function() {
-  return gulp.src(paths.imgPath + 'svg/**/*.svg')
+	return gulp.src(paths.imgPath + 'svg/**/*.svg')
 		.pipe(svgmin())
 		.pipe(gulp.dest(paths.destPath + 'svg'))
 		.pipe(notify({

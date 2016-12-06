@@ -1,6 +1,6 @@
 # Heisenberg - Zeek Starter Theme
 
-This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version ^6.2.3.
+This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version ^6.2.4.
 
 
 ## Prerequisites

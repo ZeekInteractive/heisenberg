@@ -49,11 +49,11 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #ec5840,
+	primary: #2199e8,
+	secondary: #777,
+	success: #3adb76,
+	warning: #ffae00,
+	alert: #ec5840,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -79,11 +79,11 @@ $print-transparent-backgrounds: true;
 // --------------
 
 $breakpoints: (
-  small: 0,
-  medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
-  xxlarge: 1440px,
+	small: 0,
+	medium: 640px,
+	large: 1024px,
+	xlarge: 1200px,
+	xxlarge: 1440px,
   wp-admin-bar: 782px,
 );
 $breakpoint-classes: (small medium large);
@@ -94,8 +94,8 @@ $breakpoint-classes: (small medium large);
 $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+	small: 20px,
+	medium: 30px,
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
@@ -108,22 +108,22 @@ $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
-  small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
-    'h6': 16,
-  ),
-  medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
-    'h6': 16,
-  ),
+	small: (
+		'h1': 24,
+		'h2': 20,
+		'h3': 19,
+		'h4': 18,
+		'h5': 17,
+		'h6': 16,
+	),
+	medium: (
+		'h1': 48,
+		'h2': 40,
+		'h3': 31,
+		'h4': 25,
+		'h5': 20,
+		'h6': 16,
+	),
 );
 $header-color: inherit;
 $header-lineheight: 1.4;
@@ -243,12 +243,14 @@ $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+	tiny: 0.6rem,
+	small: 0.75rem,
+	default: 0.9rem,
+	large: 1.25rem,
 );
 $button-opacity-disabled: 0.25;
+$button-background-hover-lightness: -20%;
+$button-hollow-hover-lightness: -50%;
 
 // 12. Button Group
 // ----------------
@@ -299,9 +301,9 @@ $dropdown-font-size: 1rem;
 $dropdown-width: 300px;
 $dropdown-radius: $global-radius;
 $dropdown-sizes: (
-  tiny: 100px,
-  small: 200px,
-  large: 400px,
+	tiny: 100px,
+	small: 200px,
+	large: 400px,
 );
 
 // 17. Dropdown Menu
@@ -357,6 +359,7 @@ $input-cursor-disabled: not-allowed;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-number-spinners: true;
 $input-radius: $global-radius;
+$button-radius: $global-radius;
 
 // 20. Label
 // ---------
@@ -437,6 +440,7 @@ $pagination-item-color-current: foreground($pagination-item-background-current);
 $pagination-item-color-disabled: $medium-gray;
 $pagination-ellipsis-color: $black;
 $pagination-mobile-items: false;
+$pagination-mobile-current-item: false;
 $pagination-arrows: true;
 
 // 27. Progress Bar
@@ -503,8 +507,11 @@ $table-row-stripe-hover: darken($table-background, $table-color-scale + $table-h
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
 $table-head-background: smart-scale($table-background, $table-color-scale / 2);
+$table-head-row-hover: darken($table-head-background, $table-hover-scale);
 $table-foot-background: smart-scale($table-background, $table-color-scale);
+$table-foot-row-hover: darken($table-foot-background, $table-hover-scale);
 $table-head-font-color: $body-font-color;
+$table-foot-font-color: $body-font-color;
 $show-header-for-stacked: false;
 
 // 32. Tabs

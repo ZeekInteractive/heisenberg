@@ -66,7 +66,7 @@ gulp.task('svg-min', ['clean:svgs'], function() {
 		.pipe(svgmin())
 		.pipe(gulp.dest(paths.destPath + 'svg'))
 		.pipe(notify({
-			message: "SVG Minify task complete",
+			message: "✔︎ SVG Minify task complete",
 			onLast: true
 		}));
 });
@@ -78,7 +78,10 @@ gulp.task('svg-sprite', ['svg-min'], function() {
     .pipe(svgSprite(svgConfig))
     .pipe(gulp.dest(paths.destPath))
 		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({ message: "SVG Sprite task complete"}));
+		.pipe(notify({
+			message: "✔︎ SVG Sprite task complete",
+			onLast: true
+		}));
 });
 
 
@@ -140,7 +143,7 @@ gulp.task('js', function() {
 		)
 		.pipe(gulp.dest(paths.destPath + 'js'))
 		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({ message: "✔︎ Scripts task complete!"}));
+		.pipe(notify({ message: "✔︎ Scripts task complete"}));
 });
 
 
@@ -200,17 +203,16 @@ gulp.task('foundation-js', function() {
 });
 
 
-////////////////////////////////////////////////////////////////////////////////
-// Watch our files and fire off a task when something changes
-////////////////////////////////////////////////////////////////////////////////
 
+// Watch our files and fire off a task when something changes
 gulp.task('watch', function() {
 	gulp.watch(paths.sassPath + '**/*.scss', ['styles']);
 	gulp.watch(paths.jsPath + '**/*.js', ['js']);
 	gulp.watch(paths.imgPath + 'svg/**/*.svg', ['svg-sprite']);
 });
 
-
-// Our default gulp task, which runs all of our tasks upon typing in 'gulp' in Terminal
-gulp.task('default', ['styles', 'js', 'svg-sprite']);
+// Full gulp build, including server + watch
 gulp.task('serve', ['svg-sprite', 'styles', 'js', 'browser-sync', 'foundation-js', 'watch']);
+
+// Our default gulp task, which runs a one-time task
+gulp.task('default', ['styles', 'js', 'svg-sprite']);

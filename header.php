@@ -60,12 +60,12 @@ if ( file_exists( $svg_sprite ) ) {
                 </section>
                 <div class="top-bar show-for-medium">
                     <div class="top-bar-left row column">
-	                    <?php
-	                    $args = [
-		                    'theme_location' => 'primary',
-		                    'container'      => '',
-	                    ];
-                        wp_nav_menu( $args ); ?>
+						<?php
+						$args = [
+							'theme_location' => 'primary',
+							'container'      => '',
+						];
+						wp_nav_menu( $args ); ?>
                     </div>
                 </div>
             </header>

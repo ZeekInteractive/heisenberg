@@ -71,14 +71,3 @@ add_action( 'after_setup_theme', function() {
 		'default-image' => '',
 	) ) );
 } );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-add_action( 'after_setup_theme', function() {
-	$GLOBALS['content_width'] = apply_filters( '_heisenberg_content_width', 640 );
-}, 0 );

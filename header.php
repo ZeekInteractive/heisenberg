@@ -21,8 +21,11 @@
 
 <body <?php body_class(); ?>>
 
-<?php echo file_get_contents( get_template_directory() . '/assets/dist/sprite/sprite.svg' ); ?>
-
+<?php
+$svg_sprite = file_get_contents( get_template_directory() . '/assets/dist/sprite/sprite.svg' );
+if ( file_exists( $svg_sprite ) ) {
+    echo $svg_sprite;
+} ?>
 
 <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>

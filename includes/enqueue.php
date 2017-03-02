@@ -26,7 +26,7 @@ add_action( 'wp_enqueue_scripts', function() {
 		'foundation-js',
 		HEISENBERG_URL . '/assets/dist/js/foundation.js',
 		['jquery'],
-		'6.2.3',
+		'6.2.4',
 		true
 	);
 

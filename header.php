@@ -40,12 +40,12 @@ if ( file_exists( $svg_sprite ) ) {
                 <span aria-hidden="true">&times;</span>
             </button>
 			<?php
-			$args = array(
+			$args = [
 				'theme_location'  => 'primary',
 				'container'       => 'nav',
 				'container_class' => 'offcanvas-navigation',
 				'menu_class'      => 'mobile-menu',
-			);
+			];
 			wp_nav_menu( $args ); ?>
         </div>
         <div class="off-canvas-content" data-off-canvas-content>
@@ -60,7 +60,7 @@ if ( file_exists( $svg_sprite ) ) {
                 </section>
                 <nav id="site-navigation" class="top-bar show-for-medium" data-topbar role="navigation">
                     <section class="top-bar-section row column">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+						<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
                     </section>
                 </nav>
             </header>

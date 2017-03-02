@@ -32,7 +32,7 @@ if ( file_exists( $svg_sprite ) ) {
     <div class="title-bar show-for-small-only">
       <div class="title-bar-left">
         <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
-        <span class="title-bar-title"><?php bloginfo( 'name' ); ?></span>
+        <span class="title-bar-title"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></span>
       </div>
     </div><!-- .title-bar -->
     <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
@@ -55,10 +55,10 @@ if ( file_exists( $svg_sprite ) ) {
 				<section class="row column">
 					<h1 class="site-title">
 						<a href="<?php esc_attr_e( home_url( '/' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
+							<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 						</a>
 					</h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+					<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
 				</section>
 				<nav id="site-navigation" class="top-bar show-for-medium" data-topbar role="navigation">
 					<section class="top-bar-section row column">

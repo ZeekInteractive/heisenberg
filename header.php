@@ -58,10 +58,15 @@ if ( file_exists( $svg_sprite ) ) {
                     </h1>
                     <h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
                 </section>
-                <nav id="site-navigation" class="top-bar show-for-medium" data-topbar role="navigation">
-                    <section class="top-bar-section row column">
-						<?php wp_nav_menu( [ 'theme_location' => 'primary' ] ); ?>
-                    </section>
-                </nav>
+                <div class="top-bar show-for-medium">
+                    <div class="top-bar-left row column">
+	                    <?php
+	                    $args = [
+		                    'theme_location' => 'primary',
+		                    'container'      => '',
+	                    ];
+                        wp_nav_menu( $args ); ?>
+                    </div>
+                </div>
             </header>
             <div id="content" class="site-content">

@@ -4,7 +4,7 @@ This is the Zeek Starter theme, based on <a href="http://underscores.me/">Unders
 
 
 ## Prerequisites
-* Node.js 4.x.x and npm 2.x.x
+* Node.js 6.x.x and npm 3.x.x
 * Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
 
 **Note: if you run into errors when using Terminal, you may have to use the sudo command to install Gulp.js. For instance, `sudo npm install -g gulp`**
@@ -12,7 +12,7 @@ This is the Zeek Starter theme, based on <a href="http://underscores.me/">Unders
 ## How to get started
 1. Clone or [download](https://github.com/ZeekInteractive/heisenberg/archive/master.zip "Download the Heisenberg Zip") the project onto your `themes` directory `(./wp-content/themes)`
 2. From the theme directory, run `npm install`. All of the theme dependencies will be installed into `node_modules`.
-3. Run a find and replace to remove the `heisenberg` slug/string throughout with your project name.
+3. Run a find for the string/slug `heisenberg` throughout the theme and replace it with your project name.
 4. Run `gulp serve`
 
 ## Gulp

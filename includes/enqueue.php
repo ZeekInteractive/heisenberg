@@ -6,11 +6,12 @@ namespace Heisenberg;
  * Enqueue scripts and styles
  */
 add_action( 'wp_enqueue_scripts', function() {
+	$min_ext = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	// Add Foundation JS to footer
 	wp_enqueue_script(
 		'foundation-js',
-		HEISENBERG_URL . '/assets/dist/js/foundation.js',
+		HEISENBERG_URL . "/assets/dist/js/foundation{$min_ext}.js",
 		[ 'jquery' ],
 		'6.2.4',
 		true
@@ -19,7 +20,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Add our main app js file
 	wp_enqueue_script(
 		'heisenberg_appjs',
-		HEISENBERG_URL . '/assets/dist/js/app.js',
+		HEISENBERG_URL . "/assets/dist/js/app{$min_ext}.js",
 		[ 'jquery' ],
 		HEISENBERG_VERSION,
 		true
@@ -32,7 +33,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style(
 		'heisenberg_styles',
-		HEISENBERG_URL . '/assets/dist/css/app.css',
+		HEISENBERG_URL . "/assets/dist/css/app{$min_ext}.css",
 		[],
 		HEISENBERG_VERSION,
 		''

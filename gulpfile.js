@@ -12,7 +12,6 @@ var gulp = require( 'gulp' ),
 	uglify = require( 'gulp-uglify' ),
 	babel = require( 'gulp-babel' ),
 	del = require( 'del' ),
-	cleanCSS = require( 'gulp-clean-css' ),
 	rename = require( 'gulp-rename' );
 
 
@@ -109,18 +108,15 @@ gulp.task('browser-sync', function() {
 gulp.task('css', function() {
 	gulp.src(paths.sassPath + 'app.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass({ outputStyle: 'expanded'})
+		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', notify.onError(function(error) {
 				return "Error: " + error.message;
 			}))
 		)
 		.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+		.pipe(rename('app.min.css'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(size({showFiles: true}))
-		.pipe(gulp.dest(paths.destPath + 'css'))
-		.pipe(rename('app.min.css'))
-		.pipe(cleanCSS())
-		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.destPath + 'css'))
 		.pipe(browserSync.stream({match: '**/*.css'}))
 		.pipe(notify({
@@ -137,14 +133,16 @@ gulp.task('css', function() {
 gulp.task('login-css', function() {
 	gulp.src(paths.sassPath + 'login.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass({ outputStyle: 'expanded'})
+		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', notify.onError(function(error) {
 				return "Error: " + error.message;
 			}))
 		)
 		.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+		.pipe(rename('login.min.css'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(size({showFiles: true}))		.pipe(gulp.dest(paths.destPath + 'css'))
+		.pipe(size({showFiles: true}))
+		.pipe(gulp.dest(paths.destPath + 'css'))
 		.pipe(browserSync.stream({match: '**/*.css'}))
 		.pipe(notify({
 			message: "✔︎ Login CSS task complete",

@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style(
 		'heisenberg_styles',
-		HEISENBERG_URL . "/assets/dist/css/app{$min_ext}.css",
+		HEISENBERG_URL . '/assets/dist/css/app.min.css',
 		[],
 		HEISENBERG_VERSION,
 		''

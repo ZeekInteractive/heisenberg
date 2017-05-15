@@ -19,8 +19,8 @@ This is the Zeek Starter theme, based on <a href="http://underscores.me/">Unders
 Gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading. It will watch your Sass, JS and PHP files and will compile when a change is made, inject new CSS after compilation and will reload the browser when your PHP and JS files change.
 
 ### You have 3 gulp commands that you can use:
-1. `gulp serve` - will run all of the gulp tasks, watch your files, and start a node server that does auto refreshing and CSS injection
-2. `gulp watch` - everything in `gulp serve` except running the node server
+1. `gulp serve` or `npm run dev` - will run all of the gulp tasks, watch your files, and start a node server that does auto refreshing and CSS injection
+2. `gulp watch` or `npm run watch` - everything in `gulp serve` except running the node server
 3. `gulp` - a one-time command that will run your Sass, JS and image tasks
 
 **CSS/Sass Tasks** – gulp will compile a compressed CSS and sourcemap file for you.

@@ -36,6 +36,6 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-svg-sprite": "^1.2.19",
     "gulp-svgmin": "^1.2.2",
-    "gulp-uglify": "^1.2.0"
+    "gulp-uglify": "^2.1.2"
   }
 }

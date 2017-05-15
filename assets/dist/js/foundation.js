@@ -906,8 +906,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'validateInput',
       value: function validateInput($el) {
-        var _this4 = this;
-
         var clearRequire = this.requiredCheck($el),
             validated = false,
             customValidator = true,
@@ -953,14 +951,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           // Re-validate inputs that depend on this one with equalto
           var dependentElements = this.$element.find('[data-equalto="' + $el.attr('id') + '"]');
           if (dependentElements.length) {
-            (function () {
-              var _this = _this4;
-              dependentElements.each(function () {
-                if ($(this).val()) {
-                  _this.validateInput($(this));
-                }
-              });
-            })();
+            var _this = this;
+            dependentElements.each(function () {
+              if ($(this).val()) {
+                _this.validateInput($(this));
+              }
+            });
           }
         }
 
@@ -1090,12 +1086,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       key: 'matchValidation',
       value: function matchValidation($el, validators, required) {
-        var _this5 = this;
+        var _this4 = this;
 
         required = required ? true : false;
 
         var clear = validators.split(' ').map(function (v) {
-          return _this5.options.validators[v]($el, required, $el.parent());
+          return _this4.options.validators[v]($el, required, $el.parent());
         });
         return clear.indexOf(false) === -1;
       }
@@ -5890,27 +5886,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
         // Motion UI method of reveal
         if (this.options.animationIn) {
-          (function () {
-            var afterAnimation = function afterAnimation() {
-              _this.$element.attr({
-                'aria-hidden': false,
-                'tabindex': -1
-              }).focus();
-              addRevealOpenClasses();
-              Foundation.Keyboard.trapFocus(_this.$element);
-            };
+          var afterAnimation = function afterAnimation() {
+            _this.$element.attr({
+              'aria-hidden': false,
+              'tabindex': -1
+            }).focus();
+            addRevealOpenClasses();
+            Foundation.Keyboard.trapFocus(_this.$element);
+          };
 
-            if (_this3.options.overlay) {
-              Foundation.Motion.animateIn(_this3.$overlay, 'fade-in');
+          if (this.options.overlay) {
+            Foundation.Motion.animateIn(this.$overlay, 'fade-in');
+          }
+          Foundation.Motion.animateIn(this.$element, this.options.animationIn, function () {
+            if (_this3.$element) {
+              // protect against object having been removed
+              _this3.focusableElements = Foundation.Keyboard.findFocusable(_this3.$element);
+              afterAnimation();
             }
-            Foundation.Motion.animateIn(_this3.$element, _this3.options.animationIn, function () {
-              if (_this3.$element) {
-                // protect against object having been removed
-                _this3.focusableElements = Foundation.Keyboard.findFocusable(_this3.$element);
-                afterAnimation();
-              }
-            });
-          })();
+          });
         }
         // jQuery method of reveal
         else {

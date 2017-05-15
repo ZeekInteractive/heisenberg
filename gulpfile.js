@@ -11,7 +11,8 @@ var gulp = require( 'gulp' ),
 	concat = require( 'gulp-concat' ), // Concat our js
 	uglify = require( 'gulp-uglify' ),
 	babel = require( 'gulp-babel' ),
-	del = require( 'del' );
+	del = require( 'del' ),
+	rename = require( 'gulp-rename' );
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -101,33 +102,53 @@ gulp.task('browser-sync', function() {
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Styles - Sass
+// CSS
 ////////////////////////////////////////////////////////////////////////////////
 
-gulp.task('styles', function() {
-	gulp.src(paths.sassPath + '**/*.scss')
+gulp.task('css', function() {
+	gulp.src(paths.sassPath + 'app.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass({
-			outputStyle: 'compressed'
-		})
-		.on('error', notify.onError(function(error) {
-			return "Error: " + error.message;
-		}))
+		.pipe(sass({outputStyle: 'compressed'})
+			.on('error', notify.onError(function(error) {
+				return "Error: " + error.message;
+			}))
 		)
-		.pipe(autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: false
-		}))
+		.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+		.pipe(rename('app.min.css'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(size({showFiles: true}))
-		.pipe(gulp.dest(paths.destPath + 'css')) // Location of our app.css file
+		.pipe(gulp.dest(paths.destPath + 'css'))
 		.pipe(browserSync.stream({match: '**/*.css'}))
 		.pipe(notify({
-			message: "✔︎ Styles task complete",
+			message: "✔︎ CSS task complete",
 			onLast: true
 		}));
 });
 
+
+////////////////////////////////////////////////////////////////////////////////
+// Login CSS
+////////////////////////////////////////////////////////////////////////////////
+
+gulp.task('login-css', function() {
+	gulp.src(paths.sassPath + 'login.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass({outputStyle: 'compressed'})
+			.on('error', notify.onError(function(error) {
+				return "Error: " + error.message;
+			}))
+		)
+		.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
+		.pipe(rename('login.min.css'))
+		.pipe(sourcemaps.write('.'))
+		.pipe(size({showFiles: true}))
+		.pipe(gulp.dest(paths.destPath + 'css'))
+		.pipe(browserSync.stream({match: '**/*.css'}))
+		.pipe(notify({
+			message: "✔︎ Login CSS task complete",
+			onLast: true
+		}));
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 // JS
@@ -141,9 +162,10 @@ gulp.task('js', function() {
 			return "Error: " + error.message;
 			}))
 		)
+		.pipe(rename('app.min.js'))
 		.pipe(gulp.dest(paths.destPath + 'js'))
 		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({ message: "✔︎ Scripts task complete"}));
+		.pipe(notify({ message: "✔︎ JS task complete"}));
 });
 
 
@@ -194,11 +216,12 @@ gulp.task('foundation-js', function() {
 		paths.foundationJSpath + 'foundation.zf.responsiveAccordionTabs.js'
 	])
 	.pipe(babel({
-		presets: ['es2015'],
-		compact: true
+		presets: ['es2015']
 	}))
 	.pipe(concat('foundation.js'))
+	.pipe(gulp.dest(paths.destPath + 'js'))
 	.pipe(uglify())
+	.pipe(rename('foundation.min.js'))
 	.pipe(gulp.dest(paths.destPath + 'js'));
 });
 
@@ -206,13 +229,13 @@ gulp.task('foundation-js', function() {
 
 // Watch our files and fire off a task when something changes
 gulp.task('watch', function() {
-	gulp.watch(paths.sassPath + '**/*.scss', ['styles']);
+	gulp.watch(paths.sassPath + '**/*.scss', ['css']);
 	gulp.watch(paths.jsPath + '**/*.js', ['js']);
 	gulp.watch(paths.imgPath + 'svg/**/*.svg', ['svg-sprite']);
 });
 
 // Full gulp build, including server + watch
-gulp.task('serve', ['svg-sprite', 'styles', 'js', 'browser-sync', 'foundation-js', 'watch']);
+gulp.task('serve', ['svg-sprite', 'css', 'js', 'browser-sync', 'foundation-js', 'watch']);
 
 // Our default gulp task, which runs a one-time task
-gulp.task('default', ['styles', 'js', 'svg-sprite']);
+gulp.task('default', ['css', 'js', 'svg-sprite']);

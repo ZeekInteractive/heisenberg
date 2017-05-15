@@ -11,11 +11,7 @@ namespace Heisenberg;
  * Load the CSS
  */
 add_action( 'login_enqueue_scripts', function() {
-	wp_enqueue_style(
-		'heisenberg_login_css',
-		get_template_directory_uri() . '/assets/dist/css/login.css',
-		false
-	);
+	wp_enqueue_style( 'heisenberg_login_css', get_template_directory_uri() . '/assets/dist/css/login.min.css' );
 } );
 
 /**

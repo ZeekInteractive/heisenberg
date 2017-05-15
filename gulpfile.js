@@ -213,7 +213,7 @@ gulp.task('foundation-js', function() {
 		paths.foundationJSpath + 'foundation.util.timerAndImageLoader.js',
 		paths.foundationJSpath + 'foundation.util.touch.js',
 		paths.foundationJSpath + 'foundation.util.triggers.js',
-
+		paths.foundationJSpath + 'foundation.zf.responsiveAccordionTabs.js'
 	])
 	.pipe(babel({
 		presets: ['es2015']

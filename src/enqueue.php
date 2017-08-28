@@ -11,7 +11,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Add Foundation JS to footer
 	wp_enqueue_script(
 		'foundation-js',
-		HEISENBERG_URL . "/assets/dist/js/foundation{$min_ext}.js",
+		HEISENBERG_URL . "/_dist/js/foundation{$min_ext}.js",
 		[ 'jquery' ],
 		'6.3.1',
 		true
@@ -20,7 +20,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	// Add our main app js file
 	wp_enqueue_script(
 		'heisenberg_appjs',
-		HEISENBERG_URL . "/assets/dist/js/app{$min_ext}.js",
+		HEISENBERG_URL . "/_dist/js/app{$min_ext}.js",
 		[ 'jquery' ],
 		HEISENBERG_VERSION,
 		true
@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style(
 		'heisenberg_styles',
-		HEISENBERG_URL . '/assets/dist/css/app.min.css',
+		HEISENBERG_URL . '/_dist/css/app.min.css',
 		[],
 		HEISENBERG_VERSION,
 		''

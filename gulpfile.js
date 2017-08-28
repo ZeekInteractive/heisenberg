@@ -23,7 +23,7 @@ var paths = {
 	sassPath: 'assets/sass/',
 	nodePath: 'node_modules/',
 	jsPath: 'assets/js/concat',
-	destPath: 'assets/dist/',
+	destPath: '_dist/',
 	foundationJSpath: 'node_modules/foundation-sites/js/',
 	imgPath: 'assets/img/'
 };
@@ -238,4 +238,4 @@ gulp.task('watch', function() {
 gulp.task('serve', ['svg-sprite', 'css', 'js', 'browser-sync', 'foundation-js', 'watch']);
 
 // Our default gulp task, which runs a one-time task
-gulp.task('default', ['css', 'js', 'svg-sprite']);
+gulp.task('default', ['css', 'js', 'svg-sprite', 'foundation-js']);

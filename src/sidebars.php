@@ -8,7 +8,7 @@ namespace Heisenberg;
 add_action( 'widgets_init', function() {
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'heisenberg' ),
+		'name'          => esc_html( 'Sidebar' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',

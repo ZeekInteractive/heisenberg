@@ -1,10 +1,10 @@
 # Heisenberg - Zeek Starter Theme
 
-This is the Zeek Starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version ^6.3.1.
+A minimalistic WordPress starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version 6.3.1.
 
 
 ## Prerequisites
-* Node.js 6.x.x and npm 3.x.x
+* Node.js 8.x.x and npm 5.x.x
 * Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
 
 **Note: if you run into errors when using Terminal, you may have to use the sudo command to install Gulp.js. For instance, `sudo npm install -g gulp`**
@@ -35,71 +35,6 @@ Using the `_settings.scss` file, you can overwrite a Foundation default style be
 Also, in the `app.scss` file, you can remove a Foundation CSS module by commenting out the associated mixin. For instance, if your project doesn't use Foundation's Orbit module, simply comment out the `@include foundation-orbit` mixin and the code will never reach your final `app.css` file.
 
 Be sure to check <a href="http://foundation.zurb.com/sites/docs/sass.html" title="Zurb Foundation documentation on using Sass">Foundation’s docs on using Sass</a> and their mixins for custom control on styles.
-
-## Assets + NPM architecture
-```
-assets/
-	|- dist/						# Gulp generated files enqueued by theme go here
-	|	|
-	|	|- css/
-	|	|
-	|	|	|- app.css 				# Our compressed CSS file
-	|	|	|- app.css.map 			# Our sourcemap file
-	|	|	|- login.css 			# Login page styles
-	|
-	|	|- js/
-	|	|
-	|	|	|- app.js 				# Our non-minified development JavaScript file
-	|	|	|- app.min.js 			# Our minified production JavaScript file
-	|	|	|- customizer.js
-	|
-	|- img/						# Images
-	|
-	|- js/						# JavaScript files
-	|
-	|- sass/
-	|	|
-	|	|– base/ 				 # Base element custom styles such as type, buttons, colors, etc. (non-Foundation stuff)
-	|	|   |– _buttons.scss     # Buttons
-	|	|   |– _typography.scss  # Typography rules
-	|	|   |– _utilities.scss   # Mixins and functions
-	|	|   ...                  # Etc.
-	|	|
-	|	|– components/  		 # Element items that are a combination of base items
-	|	|   |– _navigation.scss  # Navigation
-	|	|   ...                  # Etc.
-	|	|
-	|	|
-	|	|– sections/ 			 # Element items that make up large sections of the application
-	|	|   |– _header.scss      # Header
-	|	|   |– _footer.scss      # Footer
-	|	|   |– _sidebar.scss     # Sidebar
-	|	|   ...                  # Etc.
-	|	|
-	|	|– vendors/ 			 # 3rd-party element items such as plugins and core WordPress overwrites
-	|	|   |– _wordpress.scss   # WordPress style adjustments
-	|	|   ...                  # Etc.
-	|	|
-	|	|– pages/ 				 # Page specific styles
-	|	|   |– _front-page.scss  # Home specific styles
-	|	|   |– _page.scss        # Page specific styles
-	|	|   ...                  # Etc.
-	|	|
-	|	|
-	|	|– _settings.scss 		 # Foundation settings file
-	|	|- _shame.scss 			 # Temporary work arounds
-	|	|– app.scss              # Primary Sass file
-	| |
-	| |- login.scss				# Styles for the WordPress login page
-	| |
-node_modules/					# Foundation for sites + gulp plugins
-	| |
-	| |-foundation-sites/
-```
-## WordPress files
-Our starter theme follows the Codex Template Hierarchy as found on http://codex.wordpress.org/Template_Hierarchy.
-
-Site Front Page 		-	`front-page.php`
 
 ## History
 

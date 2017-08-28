@@ -9,41 +9,41 @@
 
 get_header(); ?>
 
-<div class="row column">
+<main class="row column">
 
-	<div id="primary" class="content-area">
+    <?php
+    if ( have_posts() ) : ?>
 
-		<main id="main" class="site-main" role="main">
+        <?php
+        printf( '<h1>Search Results for: %s</h1>',
+            esc_html( get_search_query() )
+        );
 
-		<?php
-		if ( have_posts() ) : ?>
+        while ( have_posts() ) :
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'heisenberg' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header>
+            the_post();
 
-			<?php
-			while ( have_posts() ) :
+            the_title('<h2>', '</h2>');
 
-				the_post();
+            the_excerpt();
 
-				get_template_part( 'template-parts/content', 'search' );
+            printf( '<a href="%s" class="button">Read More</a>',
+                esc_url( get_the_permalink() )
+            );
 
-			endwhile;
+        endwhile;
 
-			the_posts_navigation();
+        the_posts_navigation();
 
-		else :
+    else :
 
-			get_template_part( 'template-parts/content', 'none' );
+        printf( 'Sorry, no results for %s',
+            esc_html( get_search_query() )
+        );
 
-		endif; ?>
+    endif; ?>
 
-		</main>
-
-	</div>
-
-</div>
+</main>
 
 <?php
 get_footer();

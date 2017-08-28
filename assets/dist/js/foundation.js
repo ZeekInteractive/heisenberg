@@ -1251,10 +1251,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return $('#' + el.attr('data-equalto')).val() === el.val();
       }
     }
-  };
 
-  // Window exports
-  Foundation.plugin(Abide, 'Abide');
+    // Window exports
+  };Foundation.plugin(Abide, 'Abide');
 }(jQuery);
 'use strict';
 
@@ -2851,10 +2850,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @default false
      */
     closeOnClick: false
-  };
 
-  // Window exports
-  Foundation.plugin(Dropdown, 'Dropdown');
+    // Window exports
+  };Foundation.plugin(Dropdown, 'Dropdown');
 }(jQuery);
 'use strict';
 
@@ -4229,10 +4227,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @default 0
      */
     barOffset: 0
-  };
 
-  // Window exports
-  Foundation.plugin(Magellan, 'Magellan');
+    // Window exports
+  };Foundation.plugin(Magellan, 'Magellan');
 }(jQuery);
 'use strict';
 
@@ -4703,10 +4700,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
      * @default false
      */
     trapFocus: false
-  };
 
-  // Window exports
-  Foundation.plugin(OffCanvas, 'OffCanvas');
+    // Window exports
+  };Foundation.plugin(OffCanvas, 'OffCanvas');
 }(jQuery);
 'use strict';
 
@@ -8714,19 +8710,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     ImNotTouchingYou: ImNotTouchingYou,
     GetDimensions: GetDimensions,
     GetOffsets: GetOffsets
-  };
 
-  /**
-   * Compares the dimensions of an element to a container and determines collision events with container.
-   * @function
-   * @param {jQuery} element - jQuery object to test for collisions.
-   * @param {jQuery} parent - jQuery object to use as bounding container.
-   * @param {Boolean} lrOnly - set to true to check left and right values only.
-   * @param {Boolean} tbOnly - set to true to check top and bottom values only.
-   * @default if no parent object passed, detects collisions with `window`.
-   * @returns {Boolean} - true if collision free, false if a collision in any direction.
-   */
-  function ImNotTouchingYou(element, parent, lrOnly, tbOnly) {
+    /**
+     * Compares the dimensions of an element to a container and determines collision events with container.
+     * @function
+     * @param {jQuery} element - jQuery object to test for collisions.
+     * @param {jQuery} parent - jQuery object to use as bounding container.
+     * @param {Boolean} lrOnly - set to true to check left and right values only.
+     * @param {Boolean} tbOnly - set to true to check top and bottom values only.
+     * @default if no parent object passed, detects collisions with `window`.
+     * @returns {Boolean} - true if collision free, false if a collision in any direction.
+     */
+  };function ImNotTouchingYou(element, parent, lrOnly, tbOnly) {
     var eleDims = GetDimensions(element),
         top,
         bottom,

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp serve",
     "watch": "gulp watch",
-    "build": "gulp"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "foundation-sites": "6.3.1"
   },
   "devDependencies": {
+    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.18.11",
     "del": "^2.2.1",

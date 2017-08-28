@@ -150,30 +150,12 @@ gulp.task('login-css', function() {
 		}));
 });
 
+
 ////////////////////////////////////////////////////////////////////////////////
 // JS
 ////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('js', function() {
-	return gulp.src(paths.jsPath + '**/*.js')
-		.pipe(concat('app.js'))
-		.pipe(gulp.dest(paths.destPath + 'js'))
-		.pipe(uglify().on('error', notify.onError(function(error) {
-			return "Error: " + error.message;
-			}))
-		)
-		.pipe(rename('app.min.js'))
-		.pipe(gulp.dest(paths.destPath + 'js'))
-		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({ message: "✔︎ JS task complete"}));
-});
-
-
-////////////////////////////////////////////////////////////////////////////////
-// Foundation JS task, which gives us flexibility to choose what plugins we want
-////////////////////////////////////////////////////////////////////////////////
-
-gulp.task('foundation-js', function() {
 	return gulp.src([
 
 		/* Choose what JS Plugin you'd like to use. Note that some plugins also
@@ -213,22 +195,31 @@ gulp.task('foundation-js', function() {
 		paths.foundationJSpath + 'foundation.util.timerAndImageLoader.js',
 		paths.foundationJSpath + 'foundation.util.touch.js',
 		paths.foundationJSpath + 'foundation.util.triggers.js',
-		paths.foundationJSpath + 'foundation.zf.responsiveAccordionTabs.js'
+		paths.foundationJSpath + 'foundation.zf.responsiveAccordionTabs.js',
+
+		// Babel polyfill
+		paths.nodePath + 'babel-polyfill/dist/polyfill.min.js',
+        // Our custom JS
+        paths.jsPath + '**/*.js'
 	])
 	.pipe(babel({
 		presets: ['es2015']
 	}))
-	.pipe(concat('foundation.js'))
+	.pipe(concat('app.js'))
 	.pipe(gulp.dest(paths.destPath + 'js'))
-	.pipe(uglify())
-	.pipe(rename('foundation.min.js'))
-	.pipe(gulp.dest(paths.destPath + 'js'));
+	.pipe(uglify().on('error', notify.onError(function(error) {
+			return "Error: " + error.message;
+		}))
+	)
+	.pipe(rename('app.min.js'))
+	.pipe(size({showFiles: true}))
+	.pipe(browserSync.reload({stream:true}))
+	.pipe(notify({ message: "✔︎ JS task complete"}));
 });
 
 
-
 // Watch our files and fire off a task when something changes
-gulp.task('watch', function() {
+gulp.task('watch', ['build'], function() {
 	gulp.watch(paths.sassPath + '**/*.scss', ['css']);
 	gulp.watch(paths.jsPath + '**/*.js', ['js']);
 	gulp.watch(paths.imgPath + 'svg/**/*.svg', ['svg-sprite']);
@@ -238,4 +229,4 @@ gulp.task('watch', function() {
 gulp.task('serve', ['svg-sprite', 'css', 'js', 'browser-sync', 'foundation-js', 'watch']);
 
 // Our default gulp task, which runs a one-time task
-gulp.task('default', ['css', 'js', 'svg-sprite', 'foundation-js']);
+gulp.task('build', ['css', 'js', 'svg-sprite']);

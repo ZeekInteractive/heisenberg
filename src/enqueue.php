@@ -7,7 +7,7 @@ namespace Heisenberg;
  */
 add_action( 'wp_enqueue_scripts', function() {
 	$min_ext = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	
+
 	// Add our main app js file
 	wp_enqueue_script(
 		'heisenberg_appjs',
@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style(
 		'heisenberg_styles',
-		HEISENBERG_URL . '/_dist/css/app.min.css',
+		HEISENBERG_URL . '/_dist/css/app.css',
 		[],
 		HEISENBERG_VERSION,
 		''

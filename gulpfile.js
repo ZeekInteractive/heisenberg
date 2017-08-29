@@ -114,7 +114,6 @@ gulp.task('css', function() {
 			}))
 		)
 		.pipe(autoprefixer({ browsers: ['last 2 versions'] }))
-		.pipe(rename('app.min.css'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(size({showFiles: true}))
 		.pipe(gulp.dest(paths.destPath + 'css'))

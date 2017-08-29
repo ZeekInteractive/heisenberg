@@ -225,7 +225,7 @@ gulp.task('watch', ['build'], function() {
 });
 
 // Full gulp build, including server + watch
-gulp.task('serve', ['svg-sprite', 'css', 'js', 'browser-sync', 'foundation-js', 'watch']);
+gulp.task('serve', ['browser-sync', 'watch']);
 
 // Our default gulp task, which runs a one-time task
 gulp.task('build', ['css', 'js', 'svg-sprite']);

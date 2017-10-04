@@ -1,9 +1,9 @@
 <?php
 get_header(); ?>
 
-    <div class="row">
+	<div class="row">
 
-        <main class="medium-8 columns">
+		<main class="medium-8 columns">
 
 			<?php
 			if ( have_posts() ) :
@@ -12,9 +12,9 @@ get_header(); ?>
 
 					the_post();
 
-					the_title('<h1>', '</h1>');
+					the_title( '<h1>', '</h1>' );
 
-                    the_content();
+					the_content();
 
 				endwhile;
 
@@ -30,15 +30,15 @@ get_header(); ?>
 
 			endif; ?>
 
-        </main>
+		</main>
 
-        <aside class="medium-4 columns">
+		<aside class="medium-4 columns">
 
 			<?php get_sidebar(); ?>
 
-        </aside>
+		</aside>
 
-    </div>
+	</div>
 
 <?php
 get_footer();

@@ -97,9 +97,7 @@ gulp.task('css', function () {
   gulp.src(paths.sassPath + 'app.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'})
-      .on('error', notify.onError(function (error) {
-        return 'Error: ' + error.message
-      }))
+      .on('error', notify.onError(error => `Error: ${error.message}`))
     )
     .pipe(autoprefixer({browsers: ['last 2 versions']}))
     .pipe(sourcemaps.write('.'))
@@ -116,9 +114,7 @@ gulp.task('login-css', function () {
   gulp.src(paths.sassPath + 'login.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'})
-      .on('error', notify.onError(function (error) {
-        return 'Error: ' + error.message
-      }))
+      .on('error', notify.onError(error => `Error: ${error.message}`))
     )
     .pipe(autoprefixer({browsers: ['last 2 versions']}))
     .pipe(rename('login.min.css'))
@@ -190,10 +186,7 @@ gulp.task('js', function () {
     }))
     .pipe(concat('app.js'))
     .pipe(gulp.dest(paths.destPath + 'js'))
-    .pipe(uglify().on('error', notify.onError(function (error) {
-        return 'Error: ' + error.message
-      }))
-    )
+    .pipe(uglify().on('error', notify.onError(error => `Error: ${error.message}`)))
     .pipe(rename('app.min.js'))
     .pipe(size({showFiles: true}))
     .pipe(browserSync.reload({stream: true}))

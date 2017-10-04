@@ -28,19 +28,19 @@ if ( file_exists( $svg_sprite ) ) {
 } ?>
 
 <header id="masthead">
-    <section class="row column">
-        <h1 class="site-title">
-            <a href="<?php esc_attr( home_url( '/' ) ); ?>" rel="home">
-                <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-            </a>
-        </h1>
-        <h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
-    </section>
-    <?php
-    $args = [
-        'theme_location' => 'primary',
-        'container'      => '',
-    ];
-    wp_nav_menu( $args ); ?>
+	<section class="row column">
+		<h1 class="site-title">
+			<a href="<?php esc_attr( home_url( '/' ) ); ?>" rel="home">
+				<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+			</a>
+		</h1>
+		<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
+	</section>
+	<?php
+	$args = [
+		'theme_location' => 'primary',
+		'container'      => '',
+	];
+	wp_nav_menu( $args ); ?>
 </header>
 <div id="content" class="site-content" role="main">

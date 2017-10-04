@@ -14,16 +14,16 @@
 
 <footer id="colophon" class="site-footer">
 
-    <div class="column row">
+	<div class="column row">
 
-        <p class="text-center">
-            <svg class="icon">
-                <use xlink:href="#icon-coffee-cup"></use>
-            </svg>
-            Thanks for using Heisenberg!
-        </p>
+		<p class="text-center">
+			<svg class="icon">
+				<use xlink:href="#icon-coffee-cup"></use>
+			</svg>
+			Thanks for using Heisenberg!
+		</p>
 
-    </div><!-- .column.row -->
+	</div><!-- .column.row -->
 
 </footer><!-- #colophon -->
 

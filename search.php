@@ -9,41 +9,41 @@
 
 get_header(); ?>
 
-<main class="row column">
+	<main class="row column">
 
-    <?php
-    if ( have_posts() ) : ?>
+		<?php
+		if ( have_posts() ) : ?>
 
-        <?php
-        printf( '<h1>Search Results for: %s</h1>',
-            esc_html( get_search_query() )
-        );
+			<?php
+			printf( '<h1>Search Results for: %s</h1>',
+				esc_html( get_search_query() )
+			);
 
-        while ( have_posts() ) :
+			while ( have_posts() ) :
 
-            the_post();
+				the_post();
 
-            the_title('<h2>', '</h2>');
+				the_title( '<h2>', '</h2>' );
 
-            the_excerpt();
+				the_excerpt();
 
-            printf( '<a href="%s" class="button">Read More</a>',
-                esc_url( get_the_permalink() )
-            );
+				printf( '<a href="%s" class="button">Read More</a>',
+					esc_url( get_the_permalink() )
+				);
 
-        endwhile;
+			endwhile;
 
-        the_posts_navigation();
+			the_posts_navigation();
 
-    else :
+		else :
 
-        printf( 'Sorry, no results for %s',
-            esc_html( get_search_query() )
-        );
+			printf( 'Sorry, no results for %s',
+				esc_html( get_search_query() )
+			);
 
-    endif; ?>
+		endif; ?>
 
-</main>
+	</main>
 
 <?php
 get_footer();

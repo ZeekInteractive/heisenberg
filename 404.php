@@ -9,27 +9,27 @@
 
 get_header(); ?>
 
-<div class="row">
+	<div class="row">
 
-	<main class="medium-8 columns">
+		<main class="medium-8 columns">
 
-        <h1>Oops! That page can't be found.</h1>
+			<h1>Oops! That page can't be found.</h1>
 
-        <p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
-        <?php
-        get_search_form();
+			<p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
+			<?php
+			get_search_form();
 
-        the_widget( 'WP_Widget_Recent_Posts' ); ?>
+			the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-	</main>
+		</main>
 
-	<aside class="medium-4 columns">
+		<aside class="medium-4 columns">
 
-		<?php get_sidebar(); ?>
+			<?php get_sidebar(); ?>
 
-	</aside>
+		</aside>
 
-</div>
+	</div>
 
 <?php
 get_footer();

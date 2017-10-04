@@ -201,9 +201,15 @@ gulp.task('js', function() {
         // Our custom JS
         paths.jsPath + '**/*.js'
 	])
-	.pipe(babel({
-		presets: ['es2015']
-	}))
+    .pipe(babel({
+      presets: [
+        ['env', {
+          targets: {
+            browsers: ["last 2 versions", "ie >= 10"]
+          }
+        }]
+      ]
+    }))
 	.pipe(concat('app.js'))
 	.pipe(gulp.dest(paths.destPath + 'js'))
 	.pipe(uglify().on('error', notify.onError(function(error) {

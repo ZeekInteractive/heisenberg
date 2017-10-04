@@ -65,11 +65,7 @@ var svgConfig = {
 gulp.task('svg-min', ['clean:svgs'], function() {
 	return gulp.src(paths.imgPath + 'svg/**/*.svg')
 		.pipe(svgmin())
-		.pipe(gulp.dest(paths.destPath + 'svg'))
-		.pipe(notify({
-			message: "✔︎ SVG Minify task complete",
-			onLast: true
-		}));
+		.pipe(gulp.dest(paths.destPath + 'svg'));
 });
 
 gulp.task('svg-sprite', ['svg-min'], function() {
@@ -78,11 +74,7 @@ gulp.task('svg-sprite', ['svg-min'], function() {
 	])
     .pipe(svgSprite(svgConfig))
     .pipe(gulp.dest(paths.destPath))
-		.pipe(browserSync.reload({stream:true}))
-		.pipe(notify({
-			message: "✔︎ SVG Sprite task complete",
-			onLast: true
-		}));
+		.pipe(browserSync.reload({stream:true}));
 });
 
 
@@ -117,11 +109,7 @@ gulp.task('css', function() {
 		.pipe(sourcemaps.write('.'))
 		.pipe(size({showFiles: true}))
 		.pipe(gulp.dest(paths.destPath + 'css'))
-		.pipe(browserSync.stream({match: '**/*.css'}))
-		.pipe(notify({
-			message: "✔︎ CSS task complete",
-			onLast: true
-		}));
+		.pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 
@@ -142,11 +130,7 @@ gulp.task('login-css', function() {
 		.pipe(sourcemaps.write('.'))
 		.pipe(size({showFiles: true}))
 		.pipe(gulp.dest(paths.destPath + 'css'))
-		.pipe(browserSync.stream({match: '**/*.css'}))
-		.pipe(notify({
-			message: "✔︎ Login CSS task complete",
-			onLast: true
-		}));
+		.pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 
@@ -218,8 +202,7 @@ gulp.task('js', function() {
 	)
 	.pipe(rename('app.min.js'))
 	.pipe(size({showFiles: true}))
-	.pipe(browserSync.reload({stream:true}))
-	.pipe(notify({ message: "✔︎ JS task complete"}));
+	.pipe(browserSync.reload({stream:true}));
 });
 
 

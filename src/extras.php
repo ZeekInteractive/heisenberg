@@ -30,7 +30,7 @@ add_filter( 'body_class', 'heisenberg_body_classes' );
  */
 function heisenberg_oembed_flex_wrapper( $html, $url, $attr, $post_ID ) {
 	if ( strpos( $url, 'youtube' ) || strpos( $url, 'youtu.be' ) || strpos( $url, 'vimeo' ) ) {
-		return '<div class="flex-video widescreen">' . $html . '</div>';
+		return '<div class="responsive-embed widescreen">' . $html . '</div>';
 	}
 
 	return $html;

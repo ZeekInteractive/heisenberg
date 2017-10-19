@@ -7,7 +7,7 @@ namespace Heisenberg;
  */
 add_action( 'widgets_init', function() {
 
-	register_sidebar( array(
+	register_sidebar( [
 		'name'          => esc_html( 'Sidebar' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
@@ -15,5 +15,5 @@ add_action( 'widgets_init', function() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+	] );
 } );

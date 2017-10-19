@@ -30,37 +30,37 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'heisenberg' ),
-	) );
+	register_nav_menus( [
+		'primary' => esc_html( 'Primary Menu' ),
+	] );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', array(
+	add_theme_support( 'html5', [
 		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
 		'caption',
-	) );
+	] );
 
 	/*
 	 * Enable support for Post Formats.
 	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
-	add_theme_support( 'post-formats', array(
+	add_theme_support( 'post-formats', [
 		'aside',
 		'image',
 		'video',
 		'quote',
 		'link',
-	) );
+	] );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'heisenberg_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'heisenberg_custom_background_args', [
 		'default-color' => 'ffffff',
 		'default-image' => '',
-	) ) );
+	] ) );
 } );

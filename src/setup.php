@@ -3,13 +3,9 @@
 namespace Heisenberg;
 
 /**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
+ * Set up theme defaults and registers support for various WordPress features.
  */
-add_action( 'after_setup_theme', function() {
+add_action( 'after_setup_theme', function () {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -45,22 +41,5 @@ add_action( 'after_setup_theme', function() {
 		'gallery',
 		'caption',
 	] );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', [
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	] );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'heisenberg_custom_background_args', [
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	] ) );
+	
 } );

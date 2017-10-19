@@ -1,13 +1,11 @@
 # Heisenberg - Zeek Starter Theme
 
-A minimalistic WordPress starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version 6.3.1.
+A minimalistic WordPress starter theme, based on <a href="http://underscores.me/">Underscores</a> and Foundation for Sites, version ^6.4.3.
 
 
 ## Prerequisites
 * Node.js 8.x.x and npm 5.x.x
-* Gulp.js - from Terminal or Command Prompt run `npm install --global gulp`
-
-**Note: if you run into errors when using Terminal, you may have to use the sudo command to install Gulp.js. For instance, `sudo npm install -g gulp`**
+* Gulp.js - from Terminal or Command Prompt run `npm install -g gulp`
 
 ## How to get started
 1. Clone or [download](https://github.com/ZeekInteractive/heisenberg/archive/master.zip "Download the Heisenberg Zip") the project onto your `themes` directory `(./wp-content/themes)`

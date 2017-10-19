@@ -5,7 +5,7 @@ namespace Heisenberg;
 /**
  * Register widget area.
  */
-add_action( 'widgets_init', function() {
+add_action( 'widgets_init', function () {
 
 	register_sidebar( [
 		'name'          => esc_html( 'Sidebar' ),

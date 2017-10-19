@@ -22,7 +22,7 @@ const paths = {
   nodePath: 'node_modules/',
   jsPath: 'assets/js/concat',
   destPath: '_dist/',
-  foundationJSpath: 'node_modules/foundation-sites/js/',
+  foundationJSpath: 'node_modules/foundation-sites/dist/js/plugins/',
   imgPath: 'assets/img/'
 }
 

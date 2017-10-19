@@ -1,24 +1,23 @@
-// Load our plugins
-var gulp = require('gulp'),
-  sass = require('gulp-sass'),  // Our sass compiler
-  notify = require('gulp-notify'), // Basic gulp notification using OS
-  sourcemaps = require('gulp-sourcemaps'), // Sass sourcemaps
-  autoprefixer = require('gulp-autoprefixer'), // Adds vendor prefixes for us
-  svgSprite = require('gulp-svg-sprite'),
-  svgmin = require('gulp-svgmin'),
-  size = require('gulp-size'),
-  browserSync = require('browser-sync'), // Sends php, js, and css updates to browser for us
-  concat = require('gulp-concat'), // Concat our js
-  uglify = require('gulp-uglify'),
-  babel = require('gulp-babel'),
-  del = require('del'),
-  rename = require('gulp-rename')
+const gulp = require('gulp')
+const sass = require('gulp-sass')
+const notify = require('gulp-notify')
+const sourcemaps = require('gulp-sourcemaps')
+const autoprefixer = require('gulp-autoprefixer')
+const svgSprite = require('gulp-svg-sprite')
+const svgmin = require('gulp-svgmin')
+const size = require('gulp-size')
+const browserSync = require('browser-sync')
+const concat = require('gulp-concat')
+const uglify = require('gulp-uglify')
+const babel = require('gulp-babel')
+const del = require('del')
+const rename = require('gulp-rename')
 
 ////////////////////////////////////////////////////////////////////////////////
 // Path Configs
 ////////////////////////////////////////////////////////////////////////////////
 
-var paths = {
+const paths = {
   sassPath: 'assets/sass/',
   nodePath: 'node_modules/',
   jsPath: 'assets/js/concat',
@@ -27,7 +26,7 @@ var paths = {
   imgPath: 'assets/img/'
 }
 
-var bsProxy = 'heisenberg.dev'
+const bsProxy = 'heisenberg.dev'
 
 ////////////////////////////////////////////////////////////////////////////////
 // SVG Sprite Task

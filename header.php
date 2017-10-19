@@ -30,7 +30,7 @@ if ( file_exists( $svg_sprite ) ) {
 <header id="masthead">
 	<section class="row column">
 		<h1 class="site-title">
-			<a href="<?php esc_attr( home_url( '/' ) ); ?>" rel="home">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 			</a>
 		</h1>

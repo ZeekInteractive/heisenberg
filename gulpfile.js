@@ -187,6 +187,7 @@ gulp.task('js', function () {
     .pipe(gulp.dest(paths.destPath + 'js'))
     .pipe(uglify().on('error', notify.onError(error => `Error: ${error.message}`)))
     .pipe(rename('app.min.js'))
+  	.pipe(gulp.dest(paths.destPath + 'js'))
     .pipe(size({showFiles: true}))
     .pipe(browserSync.reload({stream: true}))
 })

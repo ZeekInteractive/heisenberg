@@ -199,8 +199,8 @@ gulp.task('watch', ['build'], function () {
   gulp.watch(paths.imgPath + 'svg/**/*.svg', ['svg-sprite'])
 })
 
-// Our default gulp task, which starts a server, and watches your files for changes
-gulp.task('serve', ['browser-sync', 'watch'])
+// Dev task, which starts a server, and watches your Sass, JS, and PHP files for changes
+gulp.task('dev', ['browser-sync', 'watch'])
 
 // Full gulp build, mainly used in deployment scripts
 gulp.task('build', ['css', 'js', 'svg-sprite'])

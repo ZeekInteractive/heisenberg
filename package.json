@@ -4,7 +4,7 @@
   "version": "2.0.3",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp serve",
+    "dev": "gulp dev",
     "watch": "gulp watch",
     "build": "gulp build"
   },

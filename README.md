@@ -4,7 +4,7 @@ A minimalistic WordPress starter theme, based on <a href="http://underscores.me/
 
 
 ## Prerequisites
-* Node.js 8.x.x and npm 5.x.x
+* Node.js 9.x and npm 5.x
 * Gulp.js - from Terminal or Command Prompt run `npm install -g gulp`
 
 ## How to get started
@@ -17,7 +17,7 @@ A minimalistic WordPress starter theme, based on <a href="http://underscores.me/
 Gulp will handle Sass compiling, vendor-prefixing, CSS/JS minification and browser reloading. It will watch your Sass, JS and PHP files and will compile when a change is made, inject new CSS after compilation and will reload the browser when your PHP and JS files change.
 
 ### You have 3 gulp commands that you can use:
-1. `gulp serve` or `npm run dev` - will run all of the gulp tasks, watch your files, and start a node server that does auto refreshing and CSS injection
+1. `gulp dev` or `npm run dev` - will run all of the gulp tasks, watch your files, and start a node server that does auto refreshing and CSS injection
 2. `gulp watch` or `npm run watch` - everything in `gulp serve` except running the node server
 3. `gulp` - a one-time command that will run your Sass, JS and image tasks
 

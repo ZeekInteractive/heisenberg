@@ -40,7 +40,7 @@ gulp.task('clean:svgs', function () {
   ])
 })
 
-var svgConfig = {
+const svgConfig = {
   mode: {
     symbol: { // symbol mode to build the SVG
       dest: 'sprite', // destination folder
@@ -79,7 +79,7 @@ gulp.task('svg-sprite', ['svg-min'], function () {
 ////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('browser-sync', function () {
-  var files = [
+  const files = [
     '**/*.php'
   ]
 
@@ -202,5 +202,5 @@ gulp.task('watch', ['build'], function () {
 // Dev task, which starts a server, and watches your Sass, JS, and PHP files for changes
 gulp.task('dev', ['browser-sync', 'watch'])
 
-// Full gulp build, mainly used in deployment scripts
+// Full build, mainly used in deployment scripts
 gulp.task('build', ['css', 'js', 'svg-sprite'])

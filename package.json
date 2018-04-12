@@ -26,20 +26,6 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
-    "del": "^3.0.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-jshint": "^2.1.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.2.0",
-    "gulp-size": "^3.0.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-svg-sprite": "^1.2.19",
-    "gulp-svgmin": "^1.2.2",
-    "gulp-uglify": "^3.0.0",
-    "node-sass": "^4.7.2"
+    "del": "^3.0.0"
   }
 }

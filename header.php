@@ -21,12 +21,6 @@
 
 <body <?php body_class(); ?>>
 
-<?php
-$svg_sprite = file_get_contents( get_template_directory() . '/_dist/sprite/sprite.svg' );
-if ( file_exists( $svg_sprite ) ) {
-	echo $svg_sprite;
-} ?>
-
 <header id="masthead">
 	<section class="row column">
 		<h1 class="site-title">

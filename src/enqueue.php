@@ -6,21 +6,23 @@ namespace Heisenberg;
  * Enqueue scripts and styles
  */
 add_action( 'wp_enqueue_scripts', function() {
+
 	$min_ext = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	// Add our main app js file
+	// JS
 	wp_enqueue_script(
-		'heisenberg_appjs',
-		HEISENBERG_URL . "/_dist/js/app{$min_ext}.js",
+		'heisenberg_js',
+		HEISENBERG_URL . "/_dist/build{$min_ext}.js",
 		[ 'jquery' ],
 		HEISENBERG_VERSION,
 		true
 	);
 
+	// CSS
 	wp_enqueue_style(
-		'heisenberg_styles',
-		HEISENBERG_URL . '/_dist/css/app.css',
-		[],
+		'heisenberg_css',
+		HEISENBERG_URL . '/_dist/main.css',
+		[ 'google_fonts' ],
 		HEISENBERG_VERSION,
 		''
 	);

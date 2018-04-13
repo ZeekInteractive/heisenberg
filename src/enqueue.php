@@ -29,4 +29,10 @@ add_action( 'wp_enqueue_scripts', function() {
 		HEISENBERG_VERSION,
 		''
 	);
+
+	// Google Fonts
+	wp_enqueue_style(
+		'google_fonts',
+		'https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Roboto:400,700'
+	);
 } );

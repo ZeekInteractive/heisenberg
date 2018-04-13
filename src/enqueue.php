@@ -17,11 +17,6 @@ add_action( 'wp_enqueue_scripts', function() {
 		true
 	);
 
-	// Add comment script on single posts with comments
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
 	wp_enqueue_style(
 		'heisenberg_styles',
 		HEISENBERG_URL . '/_dist/css/app.css',
@@ -35,4 +30,9 @@ add_action( 'wp_enqueue_scripts', function() {
 		'google_fonts',
 		'https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Roboto:400,700'
 	);
+
+	// Add comment script on single posts with comments
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 } );

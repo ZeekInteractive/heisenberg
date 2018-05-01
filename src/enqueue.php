@@ -12,7 +12,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	// JS
 	wp_enqueue_script(
 		'heisenberg_js',
-		HEISENBERG_URL . "/_dist/build{$min_ext}.js",
+		HEISENBERG_URL . "/dist/build{$min_ext}.js",
 		[ 'jquery' ],
 		HEISENBERG_VERSION,
 		true
@@ -21,7 +21,7 @@ add_action( 'wp_enqueue_scripts', function() {
 	// CSS
 	wp_enqueue_style(
 		'heisenberg_css',
-		HEISENBERG_URL . '/_dist/main.css',
+		HEISENBERG_URL . '/dist/main.css',
 		[ 'google_fonts' ],
 		HEISENBERG_VERSION,
 		''

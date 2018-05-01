@@ -30,11 +30,11 @@ const sass = {
 const config = {
   entry: [
     'babel-polyfill',
-    './assets/main.js'
+    './assets/js/main.js'
   ],
   output: {
     filename: `build${prefix}.js`,
-    path: path.resolve(__dirname, '_dist'),
+    path: path.resolve(__dirname, 'dist'),
   },
   mode: process.env.NODE_ENV,
   externals: {

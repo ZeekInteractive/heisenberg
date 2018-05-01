@@ -1,2 +1,5 @@
 import '../sass/app.scss'
-import './modules/foundation'
+import initFoundation from './modules/foundation'
+
+// Start Foundation JS Modules
+initFoundation()

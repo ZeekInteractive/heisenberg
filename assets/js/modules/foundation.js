@@ -1,11 +1,15 @@
 import { Foundation } from 'foundation-sites/js/foundation.core'
 import { Tabs } from 'foundation-sites/js/foundation.tabs'
 
-// Include the Tab Module
-Foundation.plugin(Tabs, 'Tabs')
+function initFoundation() {
+  // Include the Foundation Modules that we'll use in the app
+  Foundation.plugin(Tabs, 'Tabs')
 
-// Add jQuery to foundation
-Foundation.addToJquery(jQuery)
+  // Add jQuery to Foundation
+  Foundation.addToJquery(jQuery)
 
-// Kick off foundation
-jQuery(document).foundation()
+  // Kick off foundation
+  jQuery(document).foundation()
+}
+
+export default initFoundation

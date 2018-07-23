@@ -9,6 +9,13 @@ if (process.env.NODE_ENV === 'production') {
   prefix = '.min'
 }
 
+const css = {
+  loader: 'css-loader',
+  options: {
+    url: false,
+  }
+}
+
 const postcss = {
   loader: 'postcss-loader',
   options: {
@@ -34,7 +41,7 @@ const config = {
   ],
   output: {
     filename: `build${prefix}.js`,
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
   mode: process.env.NODE_ENV,
   externals: {
@@ -48,18 +55,8 @@ const config = {
         exclude: /node_modules\/(?!(foundation-sites)\/).*/ // https://github.com/zurb/foundation-sites/issues/10161#issuecomment-309503202
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          emitFile: false,
-          context: '',
-          publicPath: '../../assets/img/',
-        }
-      },
-      {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', postcss, sass]
+        use: [MiniCssExtractPlugin.loader, css, postcss, sass]
       }
     ]
   },

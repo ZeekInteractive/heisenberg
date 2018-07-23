@@ -32,8 +32,3 @@ Using the `_settings.scss` file, you can overwrite a Foundation default style be
 Also, in the `app.scss` file, you can remove a Foundation CSS module by commenting out the associated mixin. For instance, if your project doesn't use Foundation's Orbit module, simply comment out the `@include foundation-orbit` mixin and the code will never reach your final `app.css` file.
 
 Be sure to check <a href="http://foundation.zurb.com/sites/docs/sass.html" title="Zurb Foundation documentation on using Sass">Foundation’s docs on using Sass</a> and their mixins for custom control on styles.
-
-## History
-
-This project is based off of Automattic's `_s` project, based on the distribution zip
-generated off of commit [`f6ddaaa21ef562fe85881f7e3cc5bdd1e592bb0e`](https://github.com/Automattic/_s/tree/f6ddaaa21ef562fe85881f7e3cc5bdd1e592bb0e).

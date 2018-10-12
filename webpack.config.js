@@ -52,6 +52,9 @@ const config = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+	      options: {
+        	presets: ['@babel/preset-env']
+	      },
         exclude: /node_modules\/(?!(foundation-sites)\/).*/ // https://github.com/zurb/foundation-sites/issues/10161#issuecomment-309503202
       },
       {

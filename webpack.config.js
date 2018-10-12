@@ -21,7 +21,7 @@ const postcss = {
   options: {
     sourceMap: true,
     plugins () {
-      return [autoprefixer({browsers: 'last 2 versions'})]
+      return [autoprefixer()]
     }
   }
 }

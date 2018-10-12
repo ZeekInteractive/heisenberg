@@ -36,7 +36,7 @@ const sass = {
 
 const config = {
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     './assets/js/main.js'
   ],
   output: {

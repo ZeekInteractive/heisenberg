@@ -10,15 +10,11 @@
  */
 ?>
 
-</div><!-- #content -->
+</main><!-- #content -->
 
-<footer class="site-footer">
+<footer class="grid-container">
 
-	<div class="column row">
-
-		<p class="text-center">Thanks for using Heisenberg!</p>
-
-	</div>
+	<p class="text-center">Thanks for using Heisenberg!</p>
 
 </footer>
 

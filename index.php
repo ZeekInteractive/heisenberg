@@ -1,9 +1,9 @@
 <?php
 get_header(); ?>
 
-	<div class="row">
+	<div class="grid-x grid-padding-x">
 
-		<main class="medium-8 columns">
+		<div class="medium-8 cell">
 			<?php
 			if ( have_posts() ) :
 
@@ -46,9 +46,9 @@ get_header(); ?>
 				</div>
 			<?php
 			endif; ?>
-		</main>
+		</div>
 
-		<aside class="medium-4 columns">
+		<aside class="medium-4 cell">
 
 			<?php get_sidebar(); ?>
 

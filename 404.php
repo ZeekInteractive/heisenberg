@@ -9,9 +9,9 @@
 
 get_header(); ?>
 
-	<div class="row">
+	<div class="grid-x grid-padding-x">
 
-		<main class="medium-8 columns">
+		<div class="medium-8 cell">
 
 			<h1>Oops! That page can't be found.</h1>
 
@@ -21,9 +21,9 @@ get_header(); ?>
 
 			the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-		</main>
+		</div>
 
-		<aside class="medium-4 columns">
+		<aside class="medium-4 cell">
 
 			<?php get_sidebar(); ?>
 

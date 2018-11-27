@@ -70,6 +70,12 @@ const config = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin('[name].css'),
+	]
+}
+
+// Fire up a local server if requested
+if (process.env.SERVER) {
+	config.plugins.push(
 		new BrowserSyncPlugin(
 			{
 				injectChanges: true,
@@ -81,7 +87,7 @@ const config = {
 				notify: false
 			}
 		)
-	]
+	)
 }
 
 module.exports = config

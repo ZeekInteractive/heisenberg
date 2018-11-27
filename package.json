@@ -1,56 +1,57 @@
 {
-  "name": "heisenberg",
-  "description": "Heisenberg - Zeek WordPress Starter Theme",
-  "version": "3.0.0",
-  "main": "main.js",
-  "scripts": {
-    "start": "cross-env NODE_ENV=development webpack --watch",
-    "dev": "cross-env NODE_ENV=development webpack",
-    "prod": "cross-env NODE_ENV=production webpack",
-    "build": "concurrently \"npm run prod\" \"npm run dev\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ZeekInteractive/heisenberg"
-  },
-  "author": "Zeek Interactive",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ZeekInteractive/heisenberg/issues"
-  },
-  "homepage": "https://github.com/ZeekInteractive/heisenberg",
-  "dependencies": {
-    "foundation-sites": "^6.4.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "autoprefixer": "^8.4.1",
-    "babel-loader": "^8.0.4",
-    "browser-sync": "^2.26.0",
-    "browser-sync-webpack-plugin": "^2.2.2",
-    "concurrently": "^3.5.1",
-    "cross-env": "^5.1.4",
-    "css-loader": "^0.28.11",
-    "dotenv": "^5.0.1",
-    "hoek": "^5.0.3",
-    "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.9.0",
-    "postcss-loader": "^2.1.4",
-    "resolve-url-loader": "^2.3.0",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 11"
-  ],
-  "engines": {
-    "node": ">=10.5.0",
-    "npm": ">=6.4.1"
-  }
+	"name": "heisenberg",
+	"description": "Heisenberg - Zeek WordPress Starter Theme",
+	"version": "3.0.0",
+	"main": "main.js",
+	"scripts": {
+		"start": "cross-env NODE_ENV=development SERVER=true webpack --watch",
+		"watch": "cross-env NODE_ENV=development webpack --watch",
+		"dev": "cross-env NODE_ENV=development webpack",
+		"prod": "cross-env NODE_ENV=production webpack",
+		"build": "concurrently \"npm run prod\" \"npm run dev\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ZeekInteractive/heisenberg"
+	},
+	"author": "Zeek Interactive",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ZeekInteractive/heisenberg/issues"
+	},
+	"homepage": "https://github.com/ZeekInteractive/heisenberg",
+	"dependencies": {
+		"foundation-sites": "^6.4.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.1.2",
+		"@babel/polyfill": "^7.0.0",
+		"@babel/preset-env": "^7.1.0",
+		"autoprefixer": "^8.4.1",
+		"babel-loader": "^8.0.4",
+		"browser-sync": "^2.26.0",
+		"browser-sync-webpack-plugin": "^2.2.2",
+		"concurrently": "^3.5.1",
+		"cross-env": "^5.1.4",
+		"css-loader": "^0.28.11",
+		"dotenv": "^5.0.1",
+		"hoek": "^5.0.3",
+		"mini-css-extract-plugin": "^0.4.0",
+		"node-sass": "^4.9.0",
+		"postcss-loader": "^2.1.4",
+		"resolve-url-loader": "^2.3.0",
+		"sass-loader": "^6.0.7",
+		"style-loader": "^0.21.0",
+		"webpack": "^4.20.2",
+		"webpack-cli": "^3.1.2"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 11"
+	],
+	"engines": {
+		"node": ">=10.5.0",
+		"npm": ">=6.4.1"
+	}
 }

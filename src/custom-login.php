@@ -24,6 +24,6 @@ add_filter( 'login_headerurl', function() {
 /**
  * Change logo title in from WordPress to our site name
  */
-add_filter( 'login_headertitle', function() {
+add_filter( 'login_headertext', function() {
 	return get_bloginfo( 'name' );
 } );
